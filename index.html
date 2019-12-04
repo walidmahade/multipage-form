@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pricing Calculator | GetOnNet</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+<!-- START price form -->
+<section id="price-form" data-active-page="1">
+
+    <div class="header">
+        <button id="go-back-btn">
+            <span class="icon">
+                <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.287828 6.30489L6.3223 0.28734C6.70617 -0.0956467 7.32854 -0.0956468 7.71222 0.28734C8.09593 0.669986 8.09593 1.2906 7.71222 1.67322L2.37264 6.99783L7.71206 12.3223C8.09577 12.7051 8.09577 13.3256 7.71206 13.7083C7.32835 14.0911 6.70601 14.0911 6.32215 13.7083L0.287673 7.69062C0.0958184 7.4992 -5.89821e-07 7.24859 -6.11741e-07 6.99786C-6.33671e-07 6.74701 0.0960043 6.49622 0.287828 6.30489Z" fill="white"/></svg>
+            </span>
+            <span class="text">Tidigare fråga</span>
+        </button>
+    </div>
+
+    <!-- START Body -->
+    <div class="body">
+
+        <!-- === START page 1 === -->
+        <div id="page-1" class="form-page">
+            <div class="icon">
+                <img src="img/page-1-top-icon.png" alt="page one top icon">
+            </div>
+
+            <div class="section-text">
+                <h2 class="section-title">Vi fixar ditt prisförslag på nolltid!</h2>
+                <p class="para">
+                    Svara på lite snabba och enkla frågor, få ett prisförslag här direkt utan krångel.<br/>
+                    Du binder inte upp dig på något när du svarar.
+                </p>
+            </div>
+
+            <div class="section-options" id="options-1">
+                <button class="option-button">
+                    <span class="text">
+                        Jag har satt en budget,<br>
+                        men vet inte vad jag vill ha
+                    </span>
+                    <span class="iocn">
+                        <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.23216 8.79208L2.3524 15.6716C1.91477 16.1095 1.20521 16.1095 0.767791 15.6716C0.330333 15.2342 0.330333 14.5246 0.767791 14.0872L6.85532 7.99988L0.767968 1.91276C0.330509 1.47513 0.330509 0.765684 0.767968 0.328226C1.20543 -0.109409 1.91494 -0.109409 2.35258 0.328226L9.23234 7.20786C9.45107 7.4267 9.56031 7.7132 9.56031 7.99985C9.56031 8.28663 9.45086 8.57335 9.23216 8.79208Z" fill="white"/></svg>
+                    </span>
+                </button>
+
+                <button class="option-button">
+                    <span class="text">
+                        Jag vet vad jag vill ha,<br>
+                        men har inte satt en budget
+                    </span>
+                    <span class="iocn">
+                        <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.23216 8.79208L2.3524 15.6716C1.91477 16.1095 1.20521 16.1095 0.767791 15.6716C0.330333 15.2342 0.330333 14.5246 0.767791 14.0872L6.85532 7.99988L0.767968 1.91276C0.330509 1.47513 0.330509 0.765684 0.767968 0.328226C1.20543 -0.109409 1.91494 -0.109409 2.35258 0.328226L9.23234 7.20786C9.45107 7.4267 9.56031 7.7132 9.56031 7.99985C9.56031 8.28663 9.45086 8.57335 9.23216 8.79208Z" fill="white"/></svg>
+                    </span>
+                </button>
+            </div>
+        </div>
+        <!-- === END page 1 === -->
+
+    </div>
+    <!-- END Body -->
+
+    <!-- START footer -->
+    <div class="footer">
+        <div class="footer__brand">
+            <svg width="194" height="17" viewBox="0 0 194 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M39.2948 16.6241H27.1525V0.375977H39.2486V3.36008H30.3904V7.0256H37.3405V9.96271H30.3904V13.6517H39.2948V16.6241Z" fill="white"/>
+                <path d="M168.732 16.6241H156.59V0.375977H168.686V3.36008H159.828V7.0256H166.778V9.96271H159.828V13.6517H168.732V16.6241Z" fill="white"/>
+                <path d="M59.2431 3.36008V16.6241H55.9936V3.36008H50.6741V0.375977H64.5626V3.36008H59.2431Z" fill="white"/>
+                <path d="M90.3507 2.49074C91.9812 4.13552 92.8023 6.15625 92.8023 8.52944C92.8023 10.8909 91.9812 12.8881 90.3507 14.5329C88.7201 16.1777 86.7311 16.9883 84.372 16.9883C82.0129 16.9883 80.0239 16.1659 78.3934 14.5329C76.7628 12.8881 75.9418 10.8909 75.9418 8.52944C75.9418 6.15625 76.7628 4.14727 78.3934 2.49074C80.0239 0.845953 82.0129 0.0235616 84.372 0.0235616C86.7311 0.0118132 88.7201 0.834204 90.3507 2.49074ZM88.0379 12.3594C89.0324 11.3373 89.5296 10.0685 89.5296 8.52944C89.5296 6.99039 89.0324 5.70981 88.0379 4.67595C87.0433 3.64208 85.8175 3.12515 84.372 3.12515C82.9265 3.12515 81.7007 3.64208 80.7062 4.67595C79.7117 5.70981 79.2144 6.99039 79.2144 8.52944C79.2144 10.0685 79.7117 11.3373 80.7062 12.3594C81.7007 13.3815 82.9265 13.8867 84.372 13.8867C85.8175 13.8867 87.0433 13.3698 88.0379 12.3594Z" fill="white"/>
+                <path d="M118.995 16.6241H116.277L107.431 6.19146V16.6123H104.181V0.375977H106.899L115.757 11.0906V0.375977H119.007V16.6241H118.995Z" fill="white"/>
+                <path d="M145.199 16.6241H142.482L133.624 6.20321V16.6241H130.374V0.375977H133.092L141.95 11.0906V0.375977H145.199V16.6241Z" fill="white"/>
+                <path d="M188.681 3.36008V16.6241H185.431V3.36008H180.112V0.375977H194V3.36008H188.681Z" fill="white"/>
+                <path d="M8.43026 17C3.81617 17 0 13.5225 0 8.49413C0 3.46579 3.90868 0 8.43026 0C10.5928 0 12.5008 0.704907 13.8885 1.96199L11.8417 4.29993C10.9859 3.68901 9.81795 3.24257 8.63841 3.24257C5.68956 3.24257 3.52706 5.43953 3.52706 8.50587C3.52706 11.5722 5.62017 13.7692 8.43026 13.7692C10.5696 13.7692 12.0498 12.9938 12.524 10.9143H8.69623V7.97719H15.6694C16.3864 13.5225 12.8246 17 8.43026 17Z" fill="white"/>
+            </svg>
+        </div>
+    </div>
+    <!-- END footer -->
+</section>
+<!-- END price form -->
+</body>
+</html>
