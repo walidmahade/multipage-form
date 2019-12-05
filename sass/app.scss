@@ -7,7 +7,7 @@ html,
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Sulphur Point', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 18px;
     line-height: 1.5;
 }
@@ -21,15 +21,29 @@ Form Styles
 ========================================*/
 #price-form {
     background-color: #000;
-    background-image: url("img/main-bg.jpg");
+    background-image: url("../img/main-bg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
+    min-height: 800px;
     padding: 40px;
+
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     align-content: center;
+
+    .container {
+        width: 1600px;
+        max-width: 94%;
+        margin: 0 auto;
+
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-content: center;
+        height: 100%;
+    }
 
     .header {
 
@@ -51,6 +65,8 @@ Form Styles
 
         .icon {
             margin-right: 10px;
+            margin-left: 10px;
+            transition: margin .3s ease-in-out;
         }
 
         .text {
@@ -59,12 +75,41 @@ Form Styles
             font-size: 16px;
             padding-bottom: 2px;
         }
+
+        &:hover {
+            .icon {
+                margin-left: 0;
+            }
+        }
     }
 
     // ======================  START body styles
     .body {
         color: #fff;
         text-align: center;
+        position: relative;
+        min-height: 600px;
+        //background: pink;
+        overflow: hidden;
+    }
+
+    .form-page {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        //background: rgba(pink, .2);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .5s ease-in-out;
+
+        &.show {
+            opacity: 1;
+            visibility: visible;
+            transition: opacity .5s ease-in-out;
+        }
     }
 
     .section-text {
@@ -99,6 +144,11 @@ Form Styles
         align-items: center;
         margin: 0 37px;
         cursor: pointer;
+        transition: all .3s ease-in-out;
+
+        &:hover {
+            background: linear-gradient(198.67deg, #FC3F6D 0%, #FC3259 100%);
+        }
 
         .text {
             font-style: normal;
@@ -116,7 +166,30 @@ Form Styles
         text-align: right;
     }
 
-    // ======================  START page specific styles
-
-    // ======================  END page specific styles
 }
+
+// ======================  START page specific styles
+[data-active-page="1"] {
+    display: none;
+
+    .header {
+        visibility: hidden;
+        opacity: 0;
+        transition: all .3s ease-in-out;
+    }
+}
+// -------------- Page 2
+#options-2 {
+    .option-button {
+        min-width: auto;
+        padding: 21px 35px;
+        margin: 0 25px;
+
+        .text {
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 22px;
+        }
+    }
+}
+// ======================  END page specific styles
