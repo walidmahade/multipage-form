@@ -1,5 +1,45 @@
-@import url('https://fonts.googleapis.com/css?family=Sulphur+Point:400,700&display=swap');
+/****************************************
+     mixins
+*****************************************/
 
+$screen-sm-min: 576px; // mobiles
+$screen-md-min: 768px; // Small tablets (portrait view)
+$screen-lg-min: 992px; // Tablets and small desktops
+$screen-xl-min: 1200px; // Large tablets and desktops
+
+// mobile devices
+@mixin sm {
+    @media (min-width: #{$screen-sm-min}) {
+        @content;
+    }
+}
+
+// Medium devices
+@mixin md {
+    @media (min-width: #{$screen-md-min}) {
+        @content;
+    }
+}
+
+// Large devices
+@mixin lg {
+    @media (min-width: #{$screen-lg-min}) {
+        @content;
+    }
+}
+
+// Extra large devices
+@mixin xl {
+    @media (min-width: #{$screen-xl-min}) {
+        @content;
+    }
+}
+// Custom devices
+@mixin rwd($screen) {
+    @media (min-width: $screen+"px") {
+        @content;
+    }
+}
 /*========================================
 General Styles
 ========================================*/
@@ -16,6 +56,12 @@ body {
 *::after {
     box-sizing: border-box;
 }
+
+input, button {
+    &:focus {
+        outline: none;
+    }
+}
 /*========================================
 Form Styles
 ========================================*/
@@ -24,14 +70,21 @@ Form Styles
     background-image: url("../img/main-bg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
-    min-height: 800px;
+    height: auto;
+    min-height: 100vh;
     padding: 40px;
 
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     align-content: center;
+
+    overflow: hidden;
+
+    @include lg {
+        height: 100vh;
+        min-height: 800px;
+    }
 
     .container {
         width: 1600px;
@@ -46,7 +99,7 @@ Form Styles
     }
 
     .header {
-
+        margin-bottom: 45px;
     }
 
     #go-back-btn {
@@ -90,7 +143,6 @@ Form Styles
         position: relative;
         min-height: 600px;
         //background: pink;
-        overflow: hidden;
     }
 
     .form-page {
@@ -119,22 +171,28 @@ Form Styles
     .section-title {
         font-style: normal;
         font-weight: 700;
-        font-size: 46px;
-        line-height: 56px;
+        font-size: 24px;
+        line-height: 29px;
+        @include md {
+            font-size: 46px;
+            line-height: 56px;
+        }
     }
 
     .para {
         font-style: normal;
         font-weight: normal;
-        font-size: 18px;
-        //line-height: 0;
+        font-size: 15px;
+        @include md {
+            font-size: 18px;
+        }
     }
 
     .option-button {
         background: linear-gradient(196.72deg, #FA2B56 0%, #F91C3D 100%);
         box-shadow: 15px 15px 50px rgba(0, 0, 0, 0.25);
         border-radius: 5px;
-        padding: 28px 23px 32px 23px;
+        padding: 20px 23px 20px 23px;
         font-family: inherit;
         text-align: left;
         border: 0;
@@ -145,6 +203,10 @@ Form Styles
         margin: 0 37px;
         cursor: pointer;
         transition: all .3s ease-in-out;
+
+        @include md {
+            padding: 28px 23px 32px 23px;
+        }
 
         &:hover {
             background: linear-gradient(198.67deg, #FC3F6D 0%, #FC3259 100%);
@@ -190,6 +252,219 @@ Form Styles
             font-size: 18px;
             line-height: 22px;
         }
+    }
+}
+
+// ------------------ page 3
+#options-3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 670px;
+    margin: 0 auto;
+    position: relative;
+    flex-direction: column;
+    margin-left: 120px;
+
+    @media screen and (max-width: 450px) {
+        margin-left: 90px;
+    }
+
+    @include md {
+        flex-direction: row;
+        margin: 0 auto;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 11px;
+        transform: translateY(-50%);
+        background: #fff;
+        z-index: 0;
+        height: 92%;
+        width: 2px;
+
+        @include md {
+            height: 2px;
+            width: 96%;
+        }
+    }
+
+    .option-button-3 {
+        background: transparent;
+        box-shadow: none;
+        outline: none;
+        border: none;
+        padding: 0;
+        min-width: auto;
+        text-align: center;
+        position: relative;
+        font-family: inherit;
+        cursor: pointer;
+        margin-bottom: 70px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        @include md {
+            margin: 0;
+        }
+
+        label {
+            @media screen and (max-width: 767px) {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                align-content: center;
+            }
+        }
+
+        &:hover {
+            background: transparent;
+            box-shadow: none;
+        }
+
+        .text {
+            display: block;
+            width: 100px;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 19px;
+            color: #fff;
+            opacity: .5;
+            cursor: pointer;
+            position: absolute;
+            top: 0;
+            right: 31px;
+            text-align: right;
+
+            @include md {
+                padding-bottom: 40px;
+                top: -35px;
+                left: 50%;
+                transform: translateX(-50px);
+                text-align: center;
+            }
+        }
+
+        input[type="radio"] {
+            appearance: none;
+            height: 14px;
+            width: 14px;
+            border-radius: 50%;
+            background: #fff;
+            box-shadow: 0px 5px 10px rgba(2, 8, 22, 0.5);
+            display: inline-block;
+            transition: all .3s ease-in-out;
+
+            &:checked {
+                background: linear-gradient(225deg, #FA2B56 0%, #F91C3D 100%);
+                transform: scale(1.6);
+            }
+        }
+
+        input[type="radio"]:checked ~ .text {
+            opacity: 1 !important;
+        }
+
+        .tooltip {
+            width: 210px;
+            color: #fff;
+            border-radius: 5px;
+            position: absolute;
+            //top: -50%;
+            left: 60px;
+            background: linear-gradient(209.83deg, #FA2B56 0%, #F91C3D 100%);
+            box-shadow: 20px 20px 40px rgba(2, 8, 22, 0.5);
+            padding: 24px 20px 20px 20px;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 17px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all .3s ease-in-out;
+
+            @include md {
+                bottom: 120px;
+                left: 50%;
+                transform: translateX(-110px);
+            }
+
+            &:after {
+                content: "";
+                width: 0;
+                height: 0;
+                border-top: 10px solid transparent;
+                border-bottom: 10px solid transparent;
+                border-right: 10px solid #FA2B56;
+                position: absolute;
+                left: -9px;
+                top: 50%;
+                transform: translateY(-50%);
+
+                @include md {
+                    bottom: -20px;
+                    left: 100px;
+                    top: auto;
+                    transform: translateY(0);
+                    border-left: 10px solid transparent;
+                    border-right: 10px solid transparent;
+                    border-top: 10px solid #FA2B56;
+                }
+            }
+
+            &.show {
+                opacity: 1;
+                visibility: visible;
+                z-index: 99;
+                @include md {
+                    bottom: 44px;
+                }
+            }
+        }
+
+        input[type="radio"]:checked ~ .tooltip {
+            opacity: 1;
+            visibility: visible;
+            @include md {
+                bottom: 44px;
+            }
+        }
+    }
+}
+
+#page-3 {
+    .icon {
+        img {
+            max-width: 100%;
+        }
+    }
+    .cta {
+        width: 100%;
+        padding-top: 76px;
+
+        .option-button {
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 22px;
+            font-family: inherit;
+            color: #fff;
+            text-align: center;
+            min-width: 176px;
+            justify-content: center;
+        }
+    }
+}
+
+[data-active-page="3"] {
+    .footer {
+        opacity: 0;
+        visibility: hidden;
     }
 }
 // ======================  END page specific styles
