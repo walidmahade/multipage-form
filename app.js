@@ -1,4 +1,16 @@
 (function ($) {
+    // height adjustment
+    // $.each($("#price-form .form-page"), function (i, el) {
+    //     $(el).css('height', function () {
+    //         let totalHeight = 0;
+    //         $(el).children().each(function(){
+    //             totalHeight = totalHeight + $(this).outerHeight(true);
+    //         });
+    //         return totalHeight+'px';
+    //     })
+    // });
+    // END height adjustment
+
     let $priceForm = $("#price-form");
 
     // go forward a page

@@ -99,7 +99,7 @@ Form Styles
     }
 
     .header {
-        margin-bottom: 45px;
+        //margin-bottom: 45px;
     }
 
     #go-back-btn {
@@ -143,15 +143,18 @@ Form Styles
         position: relative;
         min-height: 600px;
         //background: pink;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 45px 0;
     }
 
     .form-page {
         width: 100%;
-        height: 100%;
+        //height: 100%;
         position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        //top: 50%;
+        //left: 50%;
+        //transform: translate(-50%, -50%);
         //background: rgba(pink, .2);
         opacity: 0;
         visibility: hidden;
@@ -161,6 +164,8 @@ Form Styles
             opacity: 1;
             visibility: visible;
             transition: opacity .5s ease-in-out;
+            order: 1;
+            position: relative;
         }
     }
 
@@ -465,6 +470,20 @@ Form Styles
     .footer {
         opacity: 0;
         visibility: hidden;
+    }
+}
+
+// ------------------- page 4
+#page-4 {
+    .section-title {
+        margin-top: 0;
+    }
+
+    .icon {
+        img {
+            max-width: 100%;
+            width: 426px;
+        }
     }
 }
 // ======================  END page specific styles
