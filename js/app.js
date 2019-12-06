@@ -12,6 +12,7 @@
     // END height adjustment
 
     let $priceForm = $("#price-form");
+    let projectTotal = 0;
 
     function formPageNext() {
         let currentActivePage = parseInt($priceForm.attr('data-active-page'));
@@ -35,6 +36,11 @@
     $(".option-button").click(function (e) {
         e.preventDefault();
         let pageNo = parseInt($(this).attr('data-target-page'));
+        // calculate total
+        let getPrice = $(this).attr('data-price') ? $(this).attr('data-price') : 0;
+        projectTotal += parseInt(getPrice);
+        console.log(projectTotal);
+        // go next
         formGoTo(pageNo);
     });
 
@@ -58,10 +64,41 @@
         formPageNext();
     });
 
-    // ========================= page 3 styles
+    // ========================= page 3 script
     $(".option-button-3").hover( function () {
         $(this).find(".tooltip").addClass("show");
     }, function () {
         $(this).find(".tooltip").removeClass("show");
+    });
+    $(".option-button-3").click(function () {
+        let price = $(this).attr('data-price');
+        $(this).parent().siblings(".cta")
+            .find(".option-button").attr('data-price', price);
+    });
+
+    // ====================== page 6 scripts
+    // $("#page-6 .check-option").click(function () {
+    //     let price = $(this).attr('data-price');
+    //     let currentPrice = parseInt($(this).parent()
+    //         .siblings(".cta")
+    //         .find(".option-button")
+    //         .attr('data-price'));
+    //
+    //     $(this).parent().siblings(".cta")
+    //         .find(".option-button").attr('data-price', (currentPrice + price));
+    // });
+
+    $("#options-6 input:checkbox").change(function () {
+        let total = 0;
+        $('input:checkbox:checked').each(function(){ // iterate through each checked element.
+            total += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
+        });
+
+        $("#page-6").children(".cta").find(".option-button").first()
+            .attr('data-price', total);
+    });
+    // =================== page 9
+    $("#show-price-btn").click(function () {
+        $("#display-project-total").html(`${projectTotal} kr`)
     });
 })(jQuery);
