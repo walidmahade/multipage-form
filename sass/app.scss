@@ -561,21 +561,21 @@ Form Styles
 }
 
 // ------------------- page 5
-#options-5 {
-    .option-button {
-        min-width: 176px;
-        justify-content: center;
-        padding: 20px 0;
-
-        margin: 0 0 25px 0;
-        width: 100%;
-
-        @include md {
-            margin:  0 25px;
-            width: auto;
-        }
-    }
-}
+//#options-5 {
+//    .option-button {
+//        min-width: 176px;
+//        justify-content: center;
+//        padding: 20px 0;
+//
+//        margin: 0 0 25px 0;
+//        width: 100%;
+//
+//        @include md {
+//            margin:  0 25px;
+//            width: auto;
+//        }
+//    }
+//}
 
 // ------------------- page 6
 #page-6 {
@@ -643,6 +643,7 @@ Form Styles
     }
 }
 
+#options-5,
 #options-7,
 #options-8 {
     .option-button {

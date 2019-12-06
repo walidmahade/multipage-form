@@ -27,10 +27,15 @@
         newPageActivate(nextPage);
     }
 
+    function formGoTo(pageNo) {
+        newPageActivate(pageNo);
+    }
+
     // go forward a page
     $(".option-button").click(function (e) {
         e.preventDefault();
-        formPageNext();
+        let pageNo = parseInt($(this).attr('data-target-page'));
+        formGoTo(pageNo);
     });
 
     // go back a page
