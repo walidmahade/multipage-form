@@ -594,8 +594,10 @@ Form Styles
         align-self: center;
 
         @include md {
+            max-width: 520px;
             flex-direction: row;
             align-self: unset;
+            margin: 0 auto;
         }
 
         .check-option {
@@ -608,6 +610,7 @@ Form Styles
 
             @include md {
                 padding: 0 30px;
+                flex-wrap: nowrap;
             }
         }
 
