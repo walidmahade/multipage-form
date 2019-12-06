@@ -12,7 +12,22 @@
     // END height adjustment
 
     let $priceForm = $("#price-form");
-    let projectTotal = 0;
+    let projectTotal = {
+        "page1": 0,
+        "page2": 0,
+        "page3": 0,
+        "page4": 0,
+        "page5": 0,
+        "page6": 0,
+        "page7": 0,
+        "page8": 0,
+        "page9": 0,
+        total: function () {
+            return (this.page1 + this.page2 + this.page3
+                + this.page4 + this.page5 + this.page6 + this.page7
+                + this.page8 + this.page9)
+        }
+    };
 
     function formPageNext() {
         let currentActivePage = parseInt($priceForm.attr('data-active-page'));
@@ -38,8 +53,9 @@
         let pageNo = parseInt($(this).attr('data-target-page'));
         // calculate total
         let getPrice = $(this).attr('data-price') ? $(this).attr('data-price') : 0;
-        projectTotal += parseInt(getPrice);
-        console.log(projectTotal);
+        let getPricePageName = $(this).attr('data-price-name') ? $(this).attr('data-price-name') : 0;
+        projectTotal[getPricePageName] = parseInt(getPrice);
+        console.log(projectTotal.total());
         // go next
         formGoTo(pageNo);
     });
@@ -99,6 +115,6 @@
     });
     // =================== page 9
     $("#show-price-btn").click(function () {
-        $("#display-project-total").html(`${projectTotal} kr`)
+        $("#display-project-total").html(`${projectTotal.total()} kr`)
     });
 })(jQuery);
