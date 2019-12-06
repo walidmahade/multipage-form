@@ -158,7 +158,9 @@ Form Styles
         //background: rgba(pink, .2);
         opacity: 0;
         visibility: hidden;
+        z-index: -1;
         transition: opacity .5s ease-in-out;
+        will-change: opacity, visibility, z-index;
 
         display: flex;
         flex-wrap: wrap;
@@ -171,6 +173,14 @@ Form Styles
             transition: opacity .5s ease-in-out;
             order: 1;
             position: relative;
+            z-index: 99;
+        }
+
+        .icon {
+            img, svg {
+                margin-bottom: 35px;
+                display: inline-block;
+            }
         }
     }
 
@@ -498,6 +508,7 @@ Form Styles
         img {
             max-width: 100%;
             width: 426px;
+            margin-bottom: 0 !important;
         }
     }
 
@@ -573,12 +584,17 @@ Form Styles
     .cta {
         padding-top: 65px;
     }
+
+    .section-text {
+        margin-bottom: 35px;
+    }
 }
 
 #options-9 {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    align-items: center;
 
     .card-check {
         display: inline-block;
@@ -589,6 +605,8 @@ Form Styles
 
         input[type="radio"] {
             appearance: none;
+            position: absolute;
+            display: none;
         }
 
         .card {
@@ -601,6 +619,14 @@ Form Styles
             width: 100%;
             overflow: hidden;
             cursor: pointer;
+            //margin: 11px 0;
+
+            &:hover {
+                margin: 0;
+                .plan-header {
+                    padding: 39px 18px 32px 18px;
+                }
+            }
         }
 
         .plan-header,
@@ -615,6 +641,7 @@ Form Styles
 
         .plan-header {
             padding: 28px 18px 21px 18px;
+            transition: padding .3s ease-in-out;
         }
 
         .plan-title {
@@ -663,6 +690,10 @@ Form Styles
                 justify-content: center;
                 align-items: center;
                 margin-right: 5px;
+
+                svg {
+                    margin-bottom: 0;
+                }
             }
         }
 
@@ -699,9 +730,15 @@ Form Styles
         }
 
         input[type="radio"]:checked ~ .card {
+            margin: 0;
             background: linear-gradient(230.47deg, #FA2B56 0%, #F91C3D 100%);
+
             * {
                 color: #fff;
+            }
+
+            .plan-header {
+                padding: 39px 18px 32px 18px;
             }
 
             .plan-details {
