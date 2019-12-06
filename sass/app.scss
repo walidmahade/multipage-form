@@ -82,8 +82,8 @@ Form Styles
     overflow: hidden;
 
     @include lg {
-        height: 100vh;
-        min-height: 800px;
+        height: auto;
+        min-height: 100vh;
     }
 
     .container {
@@ -96,11 +96,10 @@ Form Styles
         flex-direction: column;
         align-content: center;
         height: 100%;
+        min-height: 90vh;
     }
 
-    .header {
-        //margin-bottom: 45px;
-    }
+    .header {}
 
     #go-back-btn {
         background: transparent;
@@ -145,12 +144,13 @@ Form Styles
         //background: pink;
         display: flex;
         flex-wrap: wrap;
+        align-items: center;
         margin: 45px 0;
     }
 
     .form-page {
         width: 100%;
-        //height: 100%;
+        height: 100%;
         position: absolute;
         //top: 50%;
         //left: 50%;
@@ -159,6 +159,11 @@ Form Styles
         opacity: 0;
         visibility: hidden;
         transition: opacity .5s ease-in-out;
+
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
 
         &.show {
             opacity: 1;
@@ -178,6 +183,8 @@ Form Styles
         font-weight: 700;
         font-size: 24px;
         line-height: 29px;
+        margin-top: 0;
+        margin-bottom: 35px;
         @include md {
             font-size: 46px;
             line-height: 56px;
@@ -225,6 +232,12 @@ Form Styles
             color: #fff;
             text-align: left;
         }
+
+        &--small {
+            min-width: 176px;
+            justify-content: center;
+            padding: 20px 23px;
+        }
     }
 
     // ======================  END body styles
@@ -266,6 +279,7 @@ Form Styles
     justify-content: space-between;
     align-items: flex-start;
     max-width: 670px;
+    width: 100%;
     margin: 0 auto;
     position: relative;
     flex-direction: column;
@@ -462,6 +476,7 @@ Form Styles
             text-align: center;
             min-width: 176px;
             justify-content: center;
+            padding: 20px 15px;
         }
     }
 }
@@ -484,6 +499,384 @@ Form Styles
             max-width: 100%;
             width: 426px;
         }
+    }
+
+    .option-button {
+        min-width: 176px;
+        justify-content: center;
+        padding: 20px 0;
+    }
+}
+
+// ------------------- page 5
+#options-5 {
+    .option-button {
+        min-width: 176px;
+        justify-content: center;
+        padding: 20px 0;
+    }
+}
+
+// ------------------- page 6
+#page-6 {
+    .option-button {
+        min-width: 176px;
+        justify-content: center;
+        padding: 20px 0;
+    }
+
+    .section-options {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .check-option {
+            padding: 0 30px;
+            display: flex;
+            align-items: center;
+        }
+
+        label {
+            padding-left: 17px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 22px;
+        }
+    }
+
+    input[type="checkbox"] {
+        appearance: none;
+        height: 35px;
+        width: 35px;
+        background: #fff;
+        border-radius: 50%;
+        box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.4);
+        font-family: inherit;
+        cursor: pointer;
+
+        &:checked {
+            background-image: url("../img/check-white.png"), linear-gradient(225deg, #FA2B56 0%, #F91C3D 100%);
+            //box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.4);
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+    }
+
+    .cta {
+        padding-top: 77px;
+    }
+}
+
+// -------------------- page 9
+#page-9 {
+    .cta {
+        padding-top: 65px;
+    }
+}
+
+#options-9 {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .card-check {
+        display: inline-block;
+        width: 241px;
+        margin: 0 20px;
+        color: #151C27;
+        max-width: 241px;
+
+        input[type="radio"] {
+            appearance: none;
+        }
+
+        .card {
+            background: #FFFFFF;
+            box-shadow: 40px 40px 80px rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+            //padding: 28px 18px 19px 18px;
+            display: inline-block;
+            min-width: 241px;
+            width: 100%;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .plan-header,
+        .plan-title,
+        .plan-price,
+        .plan-details,
+        .plan-selected,
+        .plan-details-line {
+            display: block;
+            text-align: left;
+        }
+
+        .plan-header {
+            padding: 28px 18px 21px 18px;
+        }
+
+        .plan-title {
+            font-style: normal;
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 22px;
+            letter-spacing: -0.5px;
+        }
+
+        .plan-price {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+            .num {
+                font-style: normal;
+                font-weight: bold;
+                font-size: 35px;
+                line-height: 62px;
+                letter-spacing: -1px;
+                color: #0F358E;
+                padding-right: 10px;
+            }
+            .time {
+                font-style: normal;
+                font-weight: normal;
+                font-size: 14px;
+                line-height: 17px;
+                letter-spacing: -0.5px;
+                color: #BFC4CE;
+            }
+        }
+
+        .plan-selected {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .icon {
+                height: 12px;
+                width: 12px;
+                background-color: #5CB85B;
+                border-radius: 50%;
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                margin-right: 5px;
+            }
+        }
+
+        .plan-details {
+            border-top: 2px solid #F1F2F5;
+            background: #F9FAFD;
+            padding: 23px 18px 19px 18px;
+        } // plan details end
+
+        .plan-details-line {
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 18px;
+            color: #151C27;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin: 9px 0;
+
+            .right {
+                color: #1A47B0;
+            }
+        }
+
+        .plan-selected {
+            margin-top: 20px;
+            .text {
+                font-style: normal;
+                font-weight: bold;
+                font-size: 10px;
+                line-height: 18px;
+            }
+        }
+
+        input[type="radio"]:checked ~ .card {
+            background: linear-gradient(230.47deg, #FA2B56 0%, #F91C3D 100%);
+            * {
+                color: #fff;
+            }
+
+            .plan-details {
+                background-color: transparent;
+                border-color: transparent;
+            }
+
+            .plan-selected {
+                .icon {
+                    background-color: #fff;
+
+                    svg * {
+                        fill: #F91C3D;
+                    }
+                }
+            }
+        }
+
+    } // card check
+}
+
+// ------------------- page 10
+#page-10 {
+    #price-badge {
+        height: 90px;
+        width: 90px;
+        border-radius: 50%;
+        background: #F7F8FB;
+        box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.4);
+        transform: rotate(16.88deg);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        flex-wrap: wrap;
+
+        position: absolute;
+        right: -45px;
+        top: -45px;
+
+        .text {
+            font-weight: bold;
+            font-size: 10px;
+            line-height: 12px;
+            text-align: center;
+            color: #151C27;
+        }
+        .num {
+            font-weight: 800;
+            font-size: 20px;
+            line-height: 24px;
+            text-align: center;
+
+            color: #0F358E;
+        }
+    }
+
+    #total-price {
+        .text{
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 22px;
+            text-align: center;
+            color: #709BE7;
+        }
+        .num {
+            font-style: normal;
+            font-weight: bold;
+            font-size: 58px;
+            line-height: 70px;
+            text-align: center;
+        }
+    }
+    .section-text {
+        margin-bottom: 50px;
+
+        .section-title {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 34px;
+            line-height: 41px;
+            text-align: center;
+        }
+
+        .para {
+            max-width: 460px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 15px;
+        }
+    }
+
+    .options-form-wrap {
+        width: 335px;
+        margin: 0 auto;
+        background: #FFFFFF;
+        box-shadow: 40px 40px 80px rgba(2, 8, 22, 0.3);
+        border-radius: 5px;
+        padding: 37px 33px;
+        position: relative;
+
+        .field {
+            margin-bottom: 18px;
+        }
+
+        input {
+            width: 100%;
+            display: block;
+            border: 1px solid #DDDFE7;
+            box-sizing: border-box;
+            border-radius: 5px;
+            padding: 15px 13px;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 18px;
+
+            &:focus {
+                border: 1px solid #1A47B0;
+            }
+
+            &::placeholder {
+                font-family: inherit;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 18px;
+                color: #151C27;
+            }
+        }
+
+        .para {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 10px;
+            line-height: 14px;
+            color: #595F6F;
+            margin-top: 23px;
+            text-align: left;
+
+            a {
+                text-decoration: underline;
+                color: #595F6F;
+            }
+        }
+    }
+
+    .form_submit_btn {
+        @extend .option-button, .option-button--small;
+        width: 100%;
+        margin: 0 !important;
+        padding: 16px 20px;
+    }
+}
+
+// ------------------- page 11
+#page-11 {
+    .section-title {
+        font-weight: normal;
+        font-size: 48px;
+        line-height: 58px;
+        text-align: center;
+        letter-spacing: -1px;
+    }
+
+    .icon {
+        margin-bottom: 30px;
+    }
+}
+
+[data-active-page="11"] {
+    .header {
+        opacity: 0;
+        visibility: hidden;
     }
 }
 // ======================  END page specific styles
