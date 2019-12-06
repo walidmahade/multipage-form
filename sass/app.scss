@@ -36,7 +36,7 @@ $screen-xl-min: 1200px; // Large tablets and desktops
 }
 // Custom devices
 @mixin rwd($screen) {
-    @media (min-width: $screen+"px") {
+    @media (min-width: $screen) {
         @content;
     }
 }
@@ -177,15 +177,19 @@ Form Styles
         }
 
         .icon {
+            width: 100%;
+
             img, svg {
                 margin-bottom: 35px;
                 display: inline-block;
+                max-width: 100%;
             }
         }
     }
 
     .section-text {
-        margin-bottom: 80px;
+        margin-bottom: 60px;
+        width: 100%;
     }
 
     .section-title {
@@ -259,6 +263,25 @@ Form Styles
 }
 
 // ======================  START page specific styles
+// -------------- Page 1
+#page-1 {
+    .option-button {
+        margin-bottom: 35px;
+        margin-left: 0;
+        margin-right: 0;
+
+        @include rwd(850px) {
+            margin-bottom: 0;
+            &:last-child {
+                margin-left: 27.5px;
+            }
+            &:first-child {
+                margin-right: 27.5px;
+            }
+        }
+    }
+}
+
 [data-active-page="1"] {
     display: none;
 
@@ -273,7 +296,18 @@ Form Styles
     .option-button {
         min-width: auto;
         padding: 21px 35px;
-        margin: 0 25px;
+        margin: 0 0 25px 0;
+        width: 100%;
+        justify-content: center;
+
+        @include rwd(630px) {
+            margin: 0 10px;
+            width: auto;
+        }
+
+        @include lg {
+            margin: 0 25px;
+        }
 
         .text {
             font-weight: bold;
@@ -516,6 +550,13 @@ Form Styles
         min-width: 176px;
         justify-content: center;
         padding: 20px 0;
+        margin: 0 0 25px 0;
+        width: 100%;
+
+        @include md {
+            margin:  0 25px;
+            width: auto;
+        }
     }
 }
 
@@ -525,6 +566,14 @@ Form Styles
         min-width: 176px;
         justify-content: center;
         padding: 20px 0;
+
+        margin: 0 0 25px 0;
+        width: 100%;
+
+        @include md {
+            margin:  0 25px;
+            width: auto;
+        }
     }
 }
 
@@ -539,12 +588,27 @@ Form Styles
     .section-options {
         display: flex;
         justify-content: center;
+        //justify-items: center;
         align-items: center;
+        flex-direction: column;
+        align-self: center;
+
+        @include md {
+            flex-direction: row;
+            align-self: unset;
+        }
 
         .check-option {
-            padding: 0 30px;
+            padding: 15px 30px;
             display: flex;
+            justify-content: flex-start;
             align-items: center;
+            flex-wrap: wrap;
+            width: 100%;
+
+            @include md {
+                padding: 0 30px;
+            }
         }
 
         label {
@@ -579,6 +643,22 @@ Form Styles
     }
 }
 
+#options-7,
+#options-8 {
+    .option-button {
+        min-width: 176px;
+        justify-content: center;
+        padding: 20px 0;
+
+        margin: 0 0 25px 0;
+        width: 100%;
+
+        @include md {
+            margin:  0 25px;
+            width: auto;
+        }
+    }
+}
 // -------------------- page 9
 #page-9 {
     .cta {
@@ -599,9 +679,13 @@ Form Styles
     .card-check {
         display: inline-block;
         width: 241px;
-        margin: 0 20px;
+        margin: 20px;
         color: #151C27;
         max-width: 241px;
+
+        @include rwd(1280px) {
+            margin: 0 20px;
+        }
 
         input[type="radio"] {
             appearance: none;
