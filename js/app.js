@@ -90,13 +90,13 @@
     });
 
     // form submission
-    $(".form_submit_btn").click(function (e) {
-        // e.preventDefault();
-        // check if form fields are empty
+    // $(".form_submit_btn").click(function (e) {
+    // e.preventDefault();
+    // check if form fields are empty
 
-        // handle form submission here, then go to next page
-        // formPageNext();
-    });
+    // handle form submission here, then go to next page
+    // formPageNext();
+    // });
     $("#main-form").submit(function (e) {
         e.preventDefault();
         formPageNext();
@@ -135,6 +135,7 @@
         $("#page-6").children(".cta").find(".option-button").first()
             .attr('data-price', total);
     });
+
     // =================== page 9
     $("#show-price-btn").click(function () {
         $("#display-project-total").html(`${projectTotal.total()} kr`)
