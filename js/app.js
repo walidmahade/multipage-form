@@ -17,7 +17,8 @@
         "11": "", // support and hosting plan
         "16": "", // username
         "14": "", // userphone
-        "13": "" // user email
+        "13": "", // user email
+        "18": 0, // budget
     }
 
     // save price for each page, 
@@ -73,13 +74,20 @@
         moveMentArr.push(pageNo);
         console.log("page serial: " + moveMentArr);
 
-        // calculate total
+        // calculate total at this point
         let getPrice = $(this).attr('data-price') ? $(this).attr('data-price') : 0;
         let getPricePageName = $(this).attr('data-price-name') ? $(this).attr('data-price-name') : 0;
         projectTotal[getPricePageName] = parseInt(getPrice);
         console.log("Current price: " + projectTotal.total());
-        // go next
+        // go to next page
         formGoTo(pageNo);
+
+        // collect form data
+        let formVal = $(this).data('formval');
+        let formKey = $(this).data('formkey');
+        setFormData[formKey] = formVal;
+        console.log(setFormData);
+        console.log("---------------------------");
     });
 
     // go back a page
@@ -97,19 +105,6 @@
         console.log(moveMentArr);
     });
 
-    // form submission
-    // $(".form_submit_btn").click(function (e) {
-    // e.preventDefault();
-    // check if form fields are empty
-
-    // handle form submission here, then go to next page
-    // formPageNext();
-    // });
-    $("#main-form").submit(function (e) {
-        e.preventDefault();
-        formPageNext();
-    });
-
     // ========================= page 3 script
     $(".option-button-3").hover(function () {
         $(this).find(".tooltip").addClass("show");
@@ -119,26 +114,29 @@
 
     $(".option-button-3").click(function () {
         let price = $(this).attr('data-price');
-        $(this).parent().siblings(".cta")
-            .find(".option-button").attr('data-price', price);
+        let formVal = $(this).data('formval');
+        let formKey = $(this).data('formkey');
+
+        let optionButton = $(this).parent()
+            .siblings(".cta")
+            .find(".option-button");
+
+        optionButton.attr('data-price', price);
+        optionButton.data('formval', formVal);
+        optionButton.data('formkey', formKey);
     });
 
     // ====================== page 6 scripts
-    // $("#page-6 .check-option").click(function () {
-    //     let price = $(this).attr('data-price');
-    //     let currentPrice = parseInt($(this).parent()
-    //         .siblings(".cta")
-    //         .find(".option-button")
-    //         .attr('data-price'));
-    //
-    //     $(this).parent().siblings(".cta")
-    //         .find(".option-button").attr('data-price', (currentPrice + price));
-    // });
-
     $("#options-6 input:checkbox").change(function () {
         let total = 0;
-        $('input:checkbox:checked').each(function () { // iterate through each checked element.
+
+        $('#options-6 input:checkbox:checked').each(function () { // iterate through each checked element.
+            // get total
             total += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
+            // set form data
+            let formVal = $(this).data('formval');
+            let formKey = $(this).data('formkey');
+            setFormData[formKey] = formVal;
         });
 
         $("#page-6").children(".cta").find(".option-button").first()
@@ -146,8 +144,39 @@
     });
 
     // =================== page 9
+    $("#options-9 .card-check").click(function () {
+        // set form data
+        let formVal = $(this).data('formval');
+        // let formKey = $(this).data('formkey');
+        // setFormData[formKey] = formVal;
+        let optionButton = $(this).parent()
+            .siblings(".cta")
+            .find(".option-button");
+        optionButton.data('formval', formVal);
+    });
+
     $("#show-price-btn").click(function () {
-        $("#display-project-total").html(`${projectTotal.total()} kr`)
+        $("#display-project-total").html(`${projectTotal.total()} kr`);
+        setFormData["18"] = `${projectTotal.total()} kr`;
+    });
+
+    // ============== form submission
+    $("#main-form").submit(function (e) {
+        e.preventDefault();
+        // visual update
+        $("#main-form button[type='submit']").html(`<div id="loader"></div>`);
+        // collect user,phone,mail
+        $.when(
+            $.each($("#main-form input"), function (i, el) {
+                let formVal = $(el).val();
+                let formKey = $(el).data('formkey');
+                setFormData[formKey] = formVal;
+            })
+        ).then(function () {
+            console.log(setFormData);
+            // send req to save form
+            submitForm(setFormData);
+        });
     });
 
     // ================= submit form to site
@@ -160,14 +189,14 @@
             "headers": {
                 "Content-Type": "application/json",
                 "Authorization": "Basic Y2tfYzExYTIyMzViOGE3NTNhNzE2MTBhZmY4NTNmZTQ2ZWRlZDgwZWE0Yzpjc18wMDJlNTk2YzFmNzFhYWIwMzQzYzg2NzNkNjkwMTEwNzA4OGMxYWMz",
-                "Accept-Encoding": "gzip, deflate",
             },
             "processData": false,
             "data": JSON.stringify(formdata)
         }
 
         $.ajax(settings).done(function (response) {
-            console.log(response);
+            // console.log(response);
+            formPageNext();
         });
     }
 
