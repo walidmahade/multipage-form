@@ -238,6 +238,15 @@ Form Styles
             background: linear-gradient(198.67deg, #FC3F6D 0%, #FC3259 100%);
         }
 
+        &:disabled {
+            opacity: .5;
+            cursor: default;
+
+            &:hover {
+                background: linear-gradient(196.72deg, #FA2B56 0%, #F91C3D 100%);;
+            }
+        }
+
         .text {
             font-style: normal;
             font-weight: bold;
@@ -406,8 +415,8 @@ Form Styles
             text-align: right;
 
             @include md {
-                padding-bottom: 40px;
-                top: -35px;
+                padding-top: 40px;
+                top: 0px;
                 left: 50%;
                 transform: translateX(-50px);
                 text-align: center;
@@ -509,7 +518,7 @@ Form Styles
     }
     .cta {
         width: 100%;
-        padding-top: 76px;
+        padding-top: 120px;
 
         .option-button {
             font-weight: bold;

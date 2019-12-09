@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -11,611 +12,614 @@
     <!-- main styles -->
     <link rel="stylesheet" href="css/app.css">
 </head>
+
 <body>
-<!-- START price form -->
-<section id="price-form" data-active-page="1">
-    <div class="container">
+    <!-- START price form -->
+    <section id="price-form" data-active-page="10">
+        <div class="container">
 
-        <!-- START Header -->
-        <div class="header">
-            <button id="go-back-btn">
-                <span class="icon">
-                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.287828 6.30489L6.3223 0.28734C6.70617 -0.0956467 7.32854 -0.0956468 7.71222 0.28734C8.09593 0.669986 8.09593 1.2906 7.71222 1.67322L2.37264 6.99783L7.71206 12.3223C8.09577 12.7051 8.09577 13.3256 7.71206 13.7083C7.32835 14.0911 6.70601 14.0911 6.32215 13.7083L0.287673 7.69062C0.0958184 7.4992 -5.89821e-07 7.24859 -6.11741e-07 6.99786C-6.33671e-07 6.74701 0.0960043 6.49622 0.287828 6.30489Z" fill="white"/></svg>
-                </span>
-                <span class="text">Tidigare fråga</span>
-            </button>
-        </div>
-        <!-- END Body -->
+            <!-- START Header -->
+            <div class="header">
+                <button id="go-back-btn">
+                    <span class="icon">
+                        <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.287828 6.30489L6.3223 0.28734C6.70617 -0.0956467 7.32854 -0.0956468 7.71222 0.28734C8.09593 0.669986 8.09593 1.2906 7.71222 1.67322L2.37264 6.99783L7.71206 12.3223C8.09577 12.7051 8.09577 13.3256 7.71206 13.7083C7.32835 14.0911 6.70601 14.0911 6.32215 13.7083L0.287673 7.69062C0.0958184 7.4992 -5.89821e-07 7.24859 -6.11741e-07 6.99786C-6.33671e-07 6.74701 0.0960043 6.49622 0.287828 6.30489Z" fill="white"/></svg>
+                    </span>
+                    <span class="text">Tidigare fråga</span>
+                </button>
+            </div>
+            <!-- END Body -->
 
-        <!-- START Body -->
-        <div class="body">
+            <!-- START Body -->
+            <div class="body">
 
-            <!-- === START page 1 === -->
-            <div id="page-1" class="form-page show">
-                <div class="icon">
-                    <img src="img/page-1-top-icon.png" alt="page one top icon">
-                </div>
+                <!-- === START page 1 === -->
+                <div id="page-1" class="form-page">
+                    <div class="icon">
+                        <img src="img/page-1-top-icon.png" alt="page one top icon">
+                    </div>
 
-                <div class="section-text">
-                    <h2 class="section-title">Vi fixar ditt prisförslag på nolltid!</h2>
-                    <p class="para">
-                        Svara på lite snabba och enkla frågor, få ett prisförslag här direkt utan krångel.<br/>
-                        Du binder inte upp dig på något när du svarar.
-                    </p>
-                </div>
+                    <div class="section-text">
+                        <h2 class="section-title">Vi fixar ditt prisförslag på nolltid!</h2>
+                        <p class="para">
+                            Svara på lite snabba och enkla frågor, få ett prisförslag här direkt utan krångel.<br />
+                            Du binder inte upp dig på något när du svarar.
+                        </p>
+                    </div>
 
-                <div class="section-options" id="options-1">
-                    <button class="option-button" data-target-page="12">
-                        <span class="text">
-                            Jag har satt en budget,<br>
-                            men vet inte vad jag vill ha
-                        </span>
+                    <div class="section-options" id="options-1">
+                        <button class="option-button" data-target-page="12">
+                            <span class="text">
+                                Jag har satt en budget,<br>
+                                men vet inte vad jag vill ha
+                            </span>
                             <span class="iocn">
                                 <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.23216 8.79208L2.3524 15.6716C1.91477 16.1095 1.20521 16.1095 0.767791 15.6716C0.330333 15.2342 0.330333 14.5246 0.767791 14.0872L6.85532 7.99988L0.767968 1.91276C0.330509 1.47513 0.330509 0.765684 0.767968 0.328226C1.20543 -0.109409 1.91494 -0.109409 2.35258 0.328226L9.23234 7.20786C9.45107 7.4267 9.56031 7.7132 9.56031 7.99985C9.56031 8.28663 9.45086 8.57335 9.23216 8.79208Z" fill="white"/></svg>
                             </span>
-                    </button>
-
-                    <button class="option-button" data-target-page="2">
-                        <span class="text">
-                            Jag vet vad jag vill ha,<br>
-                            men har inte satt en budget
-                        </span>
-                            <span class="iocn">
-                            <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.23216 8.79208L2.3524 15.6716C1.91477 16.1095 1.20521 16.1095 0.767791 15.6716C0.330333 15.2342 0.330333 14.5246 0.767791 14.0872L6.85532 7.99988L0.767968 1.91276C0.330509 1.47513 0.330509 0.765684 0.767968 0.328226C1.20543 -0.109409 1.91494 -0.109409 2.35258 0.328226L9.23234 7.20786C9.45107 7.4267 9.56031 7.7132 9.56031 7.99985C9.56031 8.28663 9.45086 8.57335 9.23216 8.79208Z" fill="white"/></svg>
-                        </span>
-                    </button>
-                </div>
-            </div>
-            <!-- === END page 1 === -->
-
-            <!-- === START page 2 === -->
-            <div id="page-2" class="form-page">
-                <div class="icon">
-                    <svg width="167" height="154" viewBox="0 0 167 154" fill="none" xmlns="http://www.w3.org/2000/svg"><g filter="url(#filter0_d)"><path d="M153.29 2.41992H13.7099C9.76522 2.41992 6.42743 5.74708 6.42743 9.67918V137.019C6.42743 140.951 9.76522 144.278 13.7099 144.278H153.29C157.235 144.278 160.572 140.951 160.572 137.019V9.67918C160.269 5.74708 157.235 2.41992 153.29 2.41992Z" stroke="white" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M6.42743 26.0127H160.269" stroke="white" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M22.8129 18.1484C24.9915 18.1484 26.7575 16.3879 26.7575 14.2163C26.7575 12.0446 24.9915 10.2842 22.8129 10.2842C20.6343 10.2842 18.8682 12.0446 18.8682 14.2163C18.8682 16.3879 20.6343 18.1484 22.8129 18.1484Z" fill="white"/><path d="M35.5572 18.1484C37.7358 18.1484 39.5019 16.3879 39.5019 14.2163C39.5019 12.0446 37.7358 10.2842 35.5572 10.2842C33.3786 10.2842 31.6125 12.0446 31.6125 14.2163C31.6125 16.3879 33.3786 18.1484 35.5572 18.1484Z" fill="white"/><path d="M48.3015 18.1484C50.48 18.1484 52.2461 16.3879 52.2461 14.2163C52.2461 12.0446 50.48 10.2842 48.3015 10.2842C46.1229 10.2842 44.3568 12.0446 44.3568 14.2163C44.3568 16.3879 46.1229 18.1484 48.3015 18.1484Z" fill="white"/><path d="M59.5285 100.42L40.7156 85.9013L59.5285 71.0803" stroke="white" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M107.471 71.0803L126.284 85.9013L107.471 100.42" stroke="white" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M77.7347 111.309L89.2652 60.4939" stroke="white" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></g><defs><filter id="filter0_d" x="0" y="0" width="167" height="155" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset dy="4"/><feGaussianBlur stdDeviation="2"/><feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/><feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/><feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/></filter></defs></svg>
-                </div>
-
-                <div class="section-text">
-                    <h2 class="section-title">Hur många sidor behöver din hemsida?</h2>
-                    <p class="para">
-                        Exempel på sidor kan vara Hem, Om oss, Tjänster, Kontakt etc.
-                    </p>
-                </div>
-
-                <div class="section-options" id="options-2">
-                    <button class="option-button" data-target-page="3" data-price="7000" data-price-name="page2">
-                        <span class="text">1-3</span>
-                    </button>
-
-                    <button class="option-button" data-target-page="3" data-price="13000" data-price-name="page2">
-                        <span class="text">3-5</span>
-                    </button>
-
-                    <button class="option-button" data-target-page="3" data-price="17000" data-price-name="page2">
-                        <span class="text">5-10</span>
-                    </button>
-
-                    <button class="option-button" data-target-page="3" data-price="25000" data-price-name="page2">
-                        <span class="text">10+</span>
-                    </button>
-                </div>
-            </div>
-            <!-- === END page 2 === -->
-
-            <!-- === START page 3 === -->
-            <div id="page-3" class="form-page">
-                <div class="icon">
-                    <img src="img/page-3-image.png" alt="browsers">
-                </div>
-
-                <div class="section-text">
-                    <h2 class="section-title">Vilken typ av webbdesign är du ute efter?</h2>
-                    <p class="para">
-                        Våra designers är med er från början till slut i vår process.
-                    </p>
-                </div>
-
-                <div class="section-options" id="options-3">
-
-                    <button class="option-button-3" data-price="3000">
-                        <label>
-                            <input type="radio" name="kind-of-design">
-                            <span class="text">Enkelt</span>
-                            <span class="tooltip">
-                            Med <b>hög kvalité</b> går vi genom er design i flera instanser, för att det ska bli exakt så ni tänkt er.
-                        </span>
-                        </label>
-                    </button>
-
-                    <button class="option-button-3" data-price="5000">
-                        <label>
-                            <input type="radio" name="kind-of-design">
-                            <span class="text">Delikat</span>
-                            <span class="tooltip">
-                            Med <b>hög kvalité</b> går vi genom er design i flera instanser, för att det ska bli exakt så ni tänkt er.
-                        </span>
-                        </label>
-                    </button>
-
-                    <button class="option-button-3" data-price="10000">
-                        <label>
-                            <input type="radio" name="kind-of-design">
-                            <span class="text">Modern</span>
-                            <span class="tooltip">
-                                Med <b>hög kvalité</b> går vi genom er design i flera instanser, för att det ska bli exakt så ni tänkt er.
-                            </span>
-                        </label>
-                    </button>
-
-                    <button class="option-button-3" data-price="20000">
-                        <label>
-                            <input type="radio" name="kind-of-design">
-                            <span class="text">Hög kvalité</span>
-                            <span class="tooltip">
-                                Med <b>hög kvalité</b> går vi genom er design i flera instanser, för att det ska bli exakt så ni tänkt er.
-                            </span>
-                        </label>
-                    </button>
-
-                    <button class="option-button-3" data-price="100000">
-                        <label>
-                            <input type="radio" name="kind-of-design">
-                            <span class="text">Världsklass</span>
-                            <span class="tooltip">
-                                Med <b>hög kvalité</b> går vi genom er design i flera instanser, för att det ska bli exakt så ni tänkt er.
-                            </span>
-                        </label>
-                    </button>
-                </div>
-
-                <div class="cta">
-                    <button class="option-button" data-target-page="4" data-price="0" data-price-name="page3">
-                        Nästa
-                    </button>
-                </div>
-            </div>
-            <!-- === END page 3 === -->
-
-            <!-- === START page 4 === -->
-            <div id="page-4" class="form-page">
-                <div class="icon">
-                    <img src="img/page-4-icon.png" alt="browsers">
-                </div>
-
-                <div class="section-text">
-                    <h2 class="section-title">Ska hemsidan ta emot betalningar?</h2>
-                    <p class="para">
-                        Som till exempel en webbshop eller försäljning av en tjänst eller produkt.
-                    </p>
-                </div>
-
-                <div class="section-options" id="options-4">
-                    <button class="option-button" data-target-page="5" data-price="20000" data-price-name="page4">
-                        <span class="text">Ja</span>
-                    </button>
-
-                    <button class="option-button" data-target-page="5" data-price="0" data-price-name="page4">
-                        <span class="text">Nej</span>
-                    </button>
-                </div>
-            </div>
-            <!-- === END page 4 === -->
-
-            <!-- === START page 5 === -->
-            <div id="page-5" class="form-page">
-                <div class="icon">
-                    <img src="img/page-5-icon.png" alt="browsers">
-                </div>
-
-                <div class="section-text">
-                    <h2 class="section-title">Behöver du hjälp att ta fram inehåll till hemsidan?</h2>
-                    <p class="para">
-                        Som till exempel texter, bilder, illustrationer, filmer etc.
-                    </p>
-                </div>
-
-                <div class="section-options" id="options-5">
-                    <button class="option-button" data-target-page="6" data-price="0" data-price-name="page5">
-                        <span class="text">Gör själv</span>
-                    </button>
-
-                    <button class="option-button" data-target-page="6" data-price="0" data-price-name="page5">
-                        <span class="text">Behöver hjälp</span>
-                    </button>
-                </div>
-            </div>
-            <!-- === END page 5 === -->
-
-            <!-- === START page 6 === -->
-            <div id="page-6" class="form-page">
-                <div class="icon">
-<!--                    <img src="img/page-5-icon.png" alt="browsers">-->
-                </div>
-
-                <div class="section-text">
-                    <h2 class="section-title">Vad för typ av innehåll behöver du?</h2>
-                    <p class="para">
-                        Vi har lång erfarenhet av att producera innehåll tilll hemsidor.
-                    </p>
-                </div>
-
-                <div class="section-options" id="options-6">
-                    <div class="check-option">
-                        <input type="checkbox" name="extra-assets" id="asset-text" value="5000">
-                        <label for="asset-text">Text</label>
-                    </div>
-
-                    <div class="check-option">
-                        <input type="checkbox" name="extra-assets" id="asset-blide-photo" value="3000">
-                        <label for="asset-blide-photo">Bilder/Foto</label>
-                    </div>
-
-                    <div class="check-option">
-                        <input type="checkbox" name="extra-assets" id="asset-film-video" value="15000">
-                        <label for="asset-film-video">Film/Video</label>
-                    </div>
-                </div>
-
-                <div class="cta">
-                    <button class="option-button" data-target-page="7" data-price="0" data-price-name="page6">
-                        <span class="text">Nästa</span>
-                    </button>
-                </div>
-            </div>
-            <!-- === END page 6 === -->
-
-
-            <!-- === START page 7 === -->
-            <div id="page-7" class="form-page">
-                <div class="icon">
-                    <img src="img/page-7-icon.png" alt="browsers">
-                </div>
-
-                <div class="section-text">
-                    <h2 class="section-title">Ska hemsidan integreras med något annat system?</h2>
-                    <p class="para">
-                        Som till exempel ordersystem.
-                    </p>
-                </div>
-
-                <div class="section-options" id="options-7" >
-                    <button class="option-button option-button--small" data-target-page="8" data-price="10000" data-price-name="page7">
-                        <span class="text">Ja</span>
-                    </button>
-
-                    <button class="option-button option-button--small" data-target-page="8" data-price="0" data-price-name="page7">
-                        <span class="text">Nej</span>
-                    </button>
-
-                    <button class="option-button option-button--small" data-target-page="8" data-price="0" data-price-name="page7">
-                        <span class="text">Vet ej</span>
-                    </button>
-                </div>
-            </div>
-            <!-- === END page 7 === -->
-
-            <!-- === START page 8 === -->
-            <div id="page-8" class="form-page">
-                <div class="icon">
-<!--                    <img src="img/page-7-icon.png" alt="browsers">-->
-                </div>
-
-                <div class="section-text">
-                    <h2 class="section-title">Behöver du support & hosting efter sidan är levererad?</h2>
-                    <p class="para">
-                        Med våra support & hosting paket sköter vi underhåll, hosting & uppdatering av hemsidan,<br>
-                        så ni kan fokusera på det ni är bäst på.
-                    </p>
-                </div>
-
-                <div class="section-options" id="options-8">
-                    <button class="option-button option-button--small" data-target-page="9">
-                        <span class="text">Ja</span>
-                    </button>
-
-                    <button class="option-button option-button--small" data-target-page="9">
-                        <span class="text">Nej</span>
-                    </button>
-
-                    <button class="option-button option-button--small" data-target-page="9">
-                        <span class="text">Vet ej</span>
-                    </button>
-                </div>
-            </div>
-            <!-- === END page 8 === -->
-
-            <!-- === START page 9 === -->
-            <div id="page-9" class="form-page">
-                <div class="icon">
-                    <!-- <img src="img/page-7-icon.png" alt="browsers"> -->
-                </div>
-
-                <div class="section-text">
-                    <h2 class="section-title">Vilket av våra paket tror du skulle passa dig bäst?</h2>
-                    <p class="para">
-                        Lorem ipsum dolor.
-                    </p>
-                </div>
-
-                <div class="section-options" id="options-9">
-                    <!-- price plan START -->
-                    <label class="card-check">
-                        <input type="radio" name="select-price">
-
-                        <span class="card">
-                            <span class="plan-header">
-                                <span class="plan-title">Start</span>
-                                <span class="plan-price">
-                                    <span class="num">99 kr</span>
-                                    <span class="time">/ månad</span>
-                                </span>
-                            </span>
-
-                            <span class="plan-details">
-                                <span class="plan-details-line">
-                                    <span class="left">Webhotell</span>
-                                    <span class="right">10GB + Mailboks</span>
-                                </span>
-
-                                <span class="plan-details-line">
-                                    <span class="left">Support</span>
-                                    <span class="right">1 time/mnd</span>
-                                </span>
-
-                                <span class="plan-details-line">
-                                    <span class="left">Support respons</span>
-                                    <span class="right">Innen 24 timer</span>
-                                </span>
-
-                                <span class="plan-selected">
-                                    <span class="icon">
-                                        <svg width="6" height="6" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.25532 1.06327L2.28133 4.06011L0.922349 2.68918C0.761504 2.52692 0.502182 2.52692 0.341337 2.68918C0.180492 2.85144 0.180492 3.11304 0.341337 3.2753L1.98918 4.93763C2.06796 5.01711 2.173 5.06016 2.27804 5.06016C2.38309 5.06016 2.48813 5.02042 2.56691 4.93763L5.83633 1.64608C5.99718 1.48382 5.99718 1.22222 5.83633 1.05996C5.67549 0.901014 5.41617 0.901014 5.25532 1.06327Z" fill="white"/></svg>
-                                    </span>
-                                    <span class="text">Gratis migrering</span>
-                                </span>
-                            </span>
-                        </span>
-                    </label>
-                    <!-- price plan END -->
-                    <!-- price plan START -->
-                    <label class="card-check">
-                        <input type="radio" name="select-price" checked>
-
-                        <span class="card">
-                            <span class="plan-header">
-                                <span class="plan-title">Business</span>
-                                <span class="plan-price">
-                                    <span class="num">499 kr</span>
-                                    <span class="time">/ månad</span>
-                                </span>
-                            </span>
-
-                            <span class="plan-details">
-                                <span class="plan-details-line">
-                                    <span class="left">Webhotell</span>
-                                    <span class="right">20GB + Mailboks</span>
-                                </span>
-
-                                <span class="plan-details-line">
-                                    <span class="left">Support</span>
-                                    <span class="right">2 time/mnd</span>
-                                </span>
-
-                                <span class="plan-details-line">
-                                    <span class="left">Support respons</span>
-                                    <span class="right">Innen 8 timer</span>
-                                </span>
-
-                                <span class="plan-selected">
-                                    <span class="icon">
-                                        <svg width="6" height="6" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.25532 1.06327L2.28133 4.06011L0.922349 2.68918C0.761504 2.52692 0.502182 2.52692 0.341337 2.68918C0.180492 2.85144 0.180492 3.11304 0.341337 3.2753L1.98918 4.93763C2.06796 5.01711 2.173 5.06016 2.27804 5.06016C2.38309 5.06016 2.48813 5.02042 2.56691 4.93763L5.83633 1.64608C5.99718 1.48382 5.99718 1.22222 5.83633 1.05996C5.67549 0.901014 5.41617 0.901014 5.25532 1.06327Z" fill="white"/></svg>
-                                    </span>
-                                    <span class="text">Gratis migrering</span>
-                                </span>
-                            </span>
-                        </span>
-                    </label>
-                    <!-- price plan END -->
-                    <!-- price plan START -->
-                    <label class="card-check">
-                        <input type="radio" name="select-price">
-
-                        <span class="card">
-                            <span class="plan-header">
-                                <span class="plan-title">Pro</span>
-                                <span class="plan-price">
-                                    <span class="num">990 kr</span>
-                                    <span class="time">/ månad</span>
-                                </span>
-                            </span>
-
-                            <span class="plan-details">
-                                <span class="plan-details-line">
-                                    <span class="left">Webhotell</span>
-                                    <span class="right">50GB + Mailboks</span>
-                                </span>
-
-                                <span class="plan-details-line">
-                                    <span class="left">Support</span>
-                                    <span class="right">3 time/mnd</span>
-                                </span>
-
-                                <span class="plan-details-line">
-                                    <span class="left">Support respons</span>
-                                    <span class="right">Innen 4 timer</span>
-                                </span>
-
-                                <span class="plan-selected">
-                                    <span class="icon">
-                                        <svg width="6" height="6" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.25532 1.06327L2.28133 4.06011L0.922349 2.68918C0.761504 2.52692 0.502182 2.52692 0.341337 2.68918C0.180492 2.85144 0.180492 3.11304 0.341337 3.2753L1.98918 4.93763C2.06796 5.01711 2.173 5.06016 2.27804 5.06016C2.38309 5.06016 2.48813 5.02042 2.56691 4.93763L5.83633 1.64608C5.99718 1.48382 5.99718 1.22222 5.83633 1.05996C5.67549 0.901014 5.41617 0.901014 5.25532 1.06327Z" fill="white"/></svg>
-                                    </span>
-                                    <span class="text">Gratis migrering</span>
-                                </span>
-                            </span>
-                        </span>
-                    </label>
-                    <!-- price plan END -->
-                    <!-- price plan START -->
-                    <label class="card-check">
-                        <input type="radio" name="select-price">
-
-                        <span class="card">
-                            <span class="plan-header">
-                                <span class="plan-title">Custom</span>
-                                <span class="plan-price">
-                                    <span class="num">1990 kr</span>
-                                    <span class="time">/ månad</span>
-                                </span>
-                            </span>
-
-                            <span class="plan-details">
-                                <span class="plan-details-line">
-                                    <span class="left">Webhotell</span>
-                                    <span class="right">100GB + Mailboks</span>
-                                </span>
-
-                                <span class="plan-details-line">
-                                    <span class="left">Support</span>
-                                    <span class="right">10 time/mnd</span>
-                                </span>
-
-                                <span class="plan-details-line">
-                                    <span class="left">Support respons</span>
-                                    <span class="right">Innen 4 timer</span>
-                                </span>
-
-                                <span class="plan-selected">
-                                    <span class="icon">
-                                        <svg width="6" height="6" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.25532 1.06327L2.28133 4.06011L0.922349 2.68918C0.761504 2.52692 0.502182 2.52692 0.341337 2.68918C0.180492 2.85144 0.180492 3.11304 0.341337 3.2753L1.98918 4.93763C2.06796 5.01711 2.173 5.06016 2.27804 5.06016C2.38309 5.06016 2.48813 5.02042 2.56691 4.93763L5.83633 1.64608C5.99718 1.48382 5.99718 1.22222 5.83633 1.05996C5.67549 0.901014 5.41617 0.901014 5.25532 1.06327Z" fill="white"/></svg>
-                                    </span>
-                                    <span class="text">Gratis migrering</span>
-                                </span>
-                            </span>
-                        </span>
-                    </label>
-                    <!-- price plan END -->
-                </div>
-
-                <div class="cta">
-                    <button id="show-price-btn" class="option-button option-button--small" data-target-page="10">
-                        <span class="text">Nästa</span>
-                    </button>
-                </div>
-            </div>
-            <!-- === END page 9 === -->
-
-            <!-- === START page 8 === -->
-            <div id="page-10" class="form-page">
-                <div class="icon">
-<!--                    <img src="img/page-7-icon.png" alt="browsers">-->
-                </div>
-
-                <div class="section-text">
-                    <h2 class="section-title">Ditt resultat</h2>
-
-                    <div id="total-price">
-                        <div class="text">Hemsida från:</div>
-                        <div class="num" id="display-project-total">19 995 kr</div>
-                    </div>
-
-                    <p class="para">
-                        Baserat på de kriterier du har fyllt i, har vi svårt att ge dig ett exakt pris online. För att kunna ge dig ett exakt pris erbjuder vi dig en <b>kostandsfri</b> konsultation och offert.
-                        <br>
-                        <br>
-                        Fyll i formuläret här under så kontakta vi dig och har ett <b>förutsättningslöst</b> samtal!
-                    </p>
-                </div>
-
-                <div class="section-options" id="options-10">
-                    <div class="options-form-wrap">
-                        <div id="price-badge">
-                            <div class="text">JUST NU</div>
-                            <div class="num">2995:-</div>
-                            <div class="text">RABATT</div>
-                        </div>
-
-                        <div class="field">
-                            <input type="text" placeholder="Joaki...">
-                        </div>
-
-                        <div class="field">
-                            <input type="tel" placeholder="Telefon">
-                        </div>
-
-                        <div class="field">
-                            <input type="email" placeholder="E-post">
-                        </div>
-
-                        <button class="form_submit_btn">
-                            <span class="text">Skicka</span>
                         </button>
 
-                        <div class="para">
-                            Du förbinder dig inte till något när du fyller i formuläret. Genom att klicka på knappen accepterar du vår
-                            <a href="#">integritetspolicy</a>. För att kunna ge en offert med exakt pris behöver vi kunna kontakta dig.
-                        </div>
+                        <button class="option-button" data-target-page="2">
+                            <span class="text">
+                                Jag vet vad jag vill ha,<br>
+                                men har inte satt en budget
+                            </span>
+                            <span class="iocn">
+                                <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.23216 8.79208L2.3524 15.6716C1.91477 16.1095 1.20521 16.1095 0.767791 15.6716C0.330333 15.2342 0.330333 14.5246 0.767791 14.0872L6.85532 7.99988L0.767968 1.91276C0.330509 1.47513 0.330509 0.765684 0.767968 0.328226C1.20543 -0.109409 1.91494 -0.109409 2.35258 0.328226L9.23234 7.20786C9.45107 7.4267 9.56031 7.7132 9.56031 7.99985C9.56031 8.28663 9.45086 8.57335 9.23216 8.79208Z" fill="white"/></svg>
+                            </span>
+                        </button>
                     </div>
                 </div>
-            </div>
-            <!-- === END page 8 === -->
+                <!-- === END page 1 === -->
 
-            <!-- === START page 7 === -->
-            <div id="page-11" class="form-page">
-                <div class="icon">
-                    <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- === START page 2 === -->
+                <div id="page-2" class="form-page">
+                    <div class="icon">
+                        <svg width="167" height="154" viewBox="0 0 167 154" fill="none" xmlns="http://www.w3.org/2000/svg"><g filter="url(#filter0_d)"><path d="M153.29 2.41992H13.7099C9.76522 2.41992 6.42743 5.74708 6.42743 9.67918V137.019C6.42743 140.951 9.76522 144.278 13.7099 144.278H153.29C157.235 144.278 160.572 140.951 160.572 137.019V9.67918C160.269 5.74708 157.235 2.41992 153.29 2.41992Z" stroke="white" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M6.42743 26.0127H160.269" stroke="white" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M22.8129 18.1484C24.9915 18.1484 26.7575 16.3879 26.7575 14.2163C26.7575 12.0446 24.9915 10.2842 22.8129 10.2842C20.6343 10.2842 18.8682 12.0446 18.8682 14.2163C18.8682 16.3879 20.6343 18.1484 22.8129 18.1484Z" fill="white"/><path d="M35.5572 18.1484C37.7358 18.1484 39.5019 16.3879 39.5019 14.2163C39.5019 12.0446 37.7358 10.2842 35.5572 10.2842C33.3786 10.2842 31.6125 12.0446 31.6125 14.2163C31.6125 16.3879 33.3786 18.1484 35.5572 18.1484Z" fill="white"/><path d="M48.3015 18.1484C50.48 18.1484 52.2461 16.3879 52.2461 14.2163C52.2461 12.0446 50.48 10.2842 48.3015 10.2842C46.1229 10.2842 44.3568 12.0446 44.3568 14.2163C44.3568 16.3879 46.1229 18.1484 48.3015 18.1484Z" fill="white"/><path d="M59.5285 100.42L40.7156 85.9013L59.5285 71.0803" stroke="white" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M107.471 71.0803L126.284 85.9013L107.471 100.42" stroke="white" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M77.7347 111.309L89.2652 60.4939" stroke="white" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></g><defs><filter id="filter0_d" x="0" y="0" width="167" height="155" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset dy="4"/><feGaussianBlur stdDeviation="2"/><feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/><feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/><feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/></filter></defs></svg>
+                    </div>
+
+                    <div class="section-text">
+                        <h2 class="section-title">Hur många sidor behöver din hemsida?</h2>
+                        <p class="para">
+                            Exempel på sidor kan vara Hem, Om oss, Tjänster, Kontakt etc.
+                        </p>
+                    </div>
+
+                    <div class="section-options" id="options-2">
+                        <button class="option-button" data-target-page="3" data-price="7000" data-price-name="page2">
+                            <span class="text">1-3</span>
+                        </button>
+
+                        <button class="option-button" data-target-page="3" data-price="13000" data-price-name="page2">
+                            <span class="text">3-5</span>
+                        </button>
+
+                        <button class="option-button" data-target-page="3" data-price="17000" data-price-name="page2">
+                            <span class="text">5-10</span>
+                        </button>
+
+                        <button class="option-button" data-target-page="3" data-price="25000" data-price-name="page2">
+                            <span class="text">10+</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- === END page 2 === -->
+
+                <!-- === START page 3 === -->
+                <div id="page-3" class="form-page">
+                    <div class="icon">
+                        <img src="img/page-3-image.png" alt="browsers">
+                    </div>
+
+                    <div class="section-text">
+                        <h2 class="section-title">Vilken typ av webbdesign är du ute efter?</h2>
+                        <p class="para">
+                            Våra designers är med er från början till slut i vår process.
+                        </p>
+                    </div>
+
+                    <div class="section-options" id="options-3">
+
+                        <button class="option-button-3" data-price="3000">
+                            <label>
+                                <input type="radio" name="kind-of-design" checked>
+                                <span class="text">Enkelt</span>
+                                <span class="tooltip">
+                                    Med <b>hög kvalité</b> går vi genom er design i flera instanser, för att det ska bli exakt så ni tänkt er.
+                                </span>
+                            </label>
+                        </button>
+
+                        <button class="option-button-3" data-price="5000">
+                            <label>
+                                <input type="radio" name="kind-of-design">
+                                <span class="text">Delikat</span>
+                                <span class="tooltip">
+                                    Med <b>hög kvalité</b> går vi genom er design i flera instanser, för att det ska bli exakt så ni tänkt er.
+                                </span>
+                            </label>
+                        </button>
+
+                        <button class="option-button-3" data-price="10000">
+                            <label>
+                                <input type="radio" name="kind-of-design">
+                                <span class="text">Modern</span>
+                                <span class="tooltip">
+                                    Med <b>hög kvalité</b> går vi genom er design i flera instanser, för att det ska bli exakt så ni tänkt er.
+                                </span>
+                            </label>
+                        </button>
+
+                        <button class="option-button-3" data-price="20000">
+                            <label>
+                                <input type="radio" name="kind-of-design">
+                                <span class="text">Hög kvalité</span>
+                                <span class="tooltip">
+                                    Med <b>hög kvalité</b> går vi genom er design i flera instanser, för att det ska bli exakt så ni tänkt er.
+                                </span>
+                            </label>
+                        </button>
+
+                        <button class="option-button-3" data-price="100000">
+                            <label>
+                                <input type="radio" name="kind-of-design">
+                                <span class="text">Världsklass</span>
+                                <span class="tooltip">
+                                    Med <b>hög kvalité</b> går vi genom er design i flera instanser, för att det ska bli exakt så ni tänkt er.
+                                </span>
+                            </label>
+                        </button>
+                    </div>
+
+                    <div class="cta">
+                        <button class="option-button"
+                                data-target-page="4" data-price="0"
+                                data-price-name="page3">
+                            Nästa
+                        </button>
+                    </div>
+                </div>
+                <!-- === END page 3 === -->
+
+                <!-- === START page 4 === -->
+                <div id="page-4" class="form-page">
+                    <div class="icon">
+                        <img src="img/page-4-icon.png" alt="browsers">
+                    </div>
+
+                    <div class="section-text">
+                        <h2 class="section-title">Ska hemsidan ta emot betalningar?</h2>
+                        <p class="para">
+                            Som till exempel en webbshop eller försäljning av en tjänst eller produkt.
+                        </p>
+                    </div>
+
+                    <div class="section-options" id="options-4">
+                        <button class="option-button" data-target-page="5" data-price="20000" data-price-name="page4">
+                            <span class="text">Ja</span>
+                        </button>
+
+                        <button class="option-button" data-target-page="5" data-price="0" data-price-name="page4">
+                            <span class="text">Nej</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- === END page 4 === -->
+
+                <!-- === START page 5 === -->
+                <div id="page-5" class="form-page">
+                    <div class="icon">
+                        <img src="img/page-5-icon.png" alt="browsers">
+                    </div>
+
+                    <div class="section-text">
+                        <h2 class="section-title">Behöver du hjälp att ta fram inehåll till hemsidan?</h2>
+                        <p class="para">
+                            Som till exempel texter, bilder, illustrationer, filmer etc.
+                        </p>
+                    </div>
+
+                    <div class="section-options" id="options-5">
+                        <button class="option-button" data-target-page="7" data-price="0" data-price-name="page5">
+                            <span class="text">Gör själv</span>
+                        </button>
+
+                        <button class="option-button" data-target-page="6" data-price="0" data-price-name="page5">
+                            <span class="text">Behöver hjälp</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- === END page 5 === -->
+
+                <!-- === START page 6 === -->
+                <div id="page-6" class="form-page">
+                    <div class="icon">
+                        <!--                    <img src="img/page-5-icon.png" alt="browsers">-->
+                    </div>
+
+                    <div class="section-text">
+                        <h2 class="section-title">Vad för typ av innehåll behöver du?</h2>
+                        <p class="para">
+                            Vi har lång erfarenhet av att producera innehåll tilll hemsidor.
+                        </p>
+                    </div>
+
+                    <div class="section-options" id="options-6">
+                        <div class="check-option">
+                            <input type="checkbox" name="extra-assets" id="asset-text" value="5000">
+                            <label for="asset-text">Text</label>
+                        </div>
+
+                        <div class="check-option">
+                            <input type="checkbox" name="extra-assets" id="asset-blide-photo" value="3000">
+                            <label for="asset-blide-photo">Bilder/Foto</label>
+                        </div>
+
+                        <div class="check-option">
+                            <input type="checkbox" name="extra-assets" id="asset-film-video" value="15000">
+                            <label for="asset-film-video">Film/Video</label>
+                        </div>
+                    </div>
+
+                    <div class="cta">
+                        <button class="option-button" data-target-page="7" data-price="0" data-price-name="page6">
+                            <span class="text">Nästa</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- === END page 6 === -->
+
+
+                <!-- === START page 7 === -->
+                <div id="page-7" class="form-page">
+                    <div class="icon">
+                        <img src="img/page-7-icon.png" alt="browsers">
+                    </div>
+
+                    <div class="section-text">
+                        <h2 class="section-title">Ska hemsidan integreras med något annat system?</h2>
+                        <p class="para">
+                            Som till exempel ordersystem.
+                        </p>
+                    </div>
+
+                    <div class="section-options" id="options-7">
+                        <button class="option-button option-button--small" data-target-page="8" data-price="10000" data-price-name="page7">
+                            <span class="text">Ja</span>
+                        </button>
+
+                        <button class="option-button option-button--small" data-target-page="8" data-price="0" data-price-name="page7">
+                            <span class="text">Nej</span>
+                        </button>
+
+                        <button class="option-button option-button--small" data-target-page="8" data-price="0" data-price-name="page7">
+                            <span class="text">Vet ej</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- === END page 7 === -->
+
+                <!-- === START page 8 === -->
+                <div id="page-8" class="form-page">
+                    <div class="icon">
+                        <!-- <img src="img/page-7-icon.png" alt="browsers"> -->
+                    </div>
+
+                    <div class="section-text">
+                        <h2 class="section-title">Behöver du support & hosting efter sidan är levererad?</h2>
+                        <p class="para">
+                            Med våra support & hosting paket sköter vi underhåll, hosting & uppdatering av hemsidan,<br>
+                            så ni kan fokusera på det ni är bäst på.
+                        </p>
+                    </div>
+
+                    <div class="section-options" id="options-8">
+                        <button class="option-button option-button--small" data-target-page="9">
+                            <span class="text">Ja</span>
+                        </button>
+
+                        <button class="option-button option-button--small" data-target-page="10">
+                            <span class="text">Nej</span>
+                        </button>
+
+                        <button class="option-button option-button--small" data-target-page="10">
+                            <span class="text">Vet ej</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- === END page 8 === -->
+
+                <!-- === START page 9 === -->
+                <div id="page-9" class="form-page">
+                    <div class="icon">
+                        <!-- <img src="img/page-7-icon.png" alt="browsers"> -->
+                    </div>
+
+                    <div class="section-text">
+                        <h2 class="section-title">Vilket av våra paket tror du skulle passa dig bäst?</h2>
+                        <p class="para">
+                            Lorem ipsum dolor.
+                        </p>
+                    </div>
+
+                    <div class="section-options" id="options-9">
+                        <!-- price plan START -->
+                        <label class="card-check">
+                            <input type="radio" name="select-price">
+
+                            <span class="card">
+                                <span class="plan-header">
+                                    <span class="plan-title">Start</span>
+                                    <span class="plan-price">
+                                        <span class="num">99 kr</span>
+                                        <span class="time">/ månad</span>
+                                    </span>
+                                </span>
+
+                                <span class="plan-details">
+                                    <span class="plan-details-line">
+                                        <span class="left">Webhotell</span>
+                                        <span class="right">10GB + Mailboks</span>
+                                    </span>
+
+                                    <span class="plan-details-line">
+                                        <span class="left">Support</span>
+                                        <span class="right">1 time/mnd</span>
+                                    </span>
+
+                                    <span class="plan-details-line">
+                                        <span class="left">Support respons</span>
+                                        <span class="right">Innen 24 timer</span>
+                                    </span>
+
+                                    <span class="plan-selected">
+                                        <span class="icon">
+                                            <svg width="6" height="6" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.25532 1.06327L2.28133 4.06011L0.922349 2.68918C0.761504 2.52692 0.502182 2.52692 0.341337 2.68918C0.180492 2.85144 0.180492 3.11304 0.341337 3.2753L1.98918 4.93763C2.06796 5.01711 2.173 5.06016 2.27804 5.06016C2.38309 5.06016 2.48813 5.02042 2.56691 4.93763L5.83633 1.64608C5.99718 1.48382 5.99718 1.22222 5.83633 1.05996C5.67549 0.901014 5.41617 0.901014 5.25532 1.06327Z" fill="white"/></svg>
+                                        </span>
+                                        <span class="text">Gratis migrering</span>
+                                    </span>
+                                </span>
+                            </span>
+                        </label>
+                        <!-- price plan END -->
+                        <!-- price plan START -->
+                        <label class="card-check">
+                            <input type="radio" name="select-price" checked>
+
+                            <span class="card">
+                                <span class="plan-header">
+                                    <span class="plan-title">Business</span>
+                                    <span class="plan-price">
+                                        <span class="num">499 kr</span>
+                                        <span class="time">/ månad</span>
+                                    </span>
+                                </span>
+
+                                <span class="plan-details">
+                                    <span class="plan-details-line">
+                                        <span class="left">Webhotell</span>
+                                        <span class="right">20GB + Mailboks</span>
+                                    </span>
+
+                                    <span class="plan-details-line">
+                                        <span class="left">Support</span>
+                                        <span class="right">2 time/mnd</span>
+                                    </span>
+
+                                    <span class="plan-details-line">
+                                        <span class="left">Support respons</span>
+                                        <span class="right">Innen 8 timer</span>
+                                    </span>
+
+                                    <span class="plan-selected">
+                                        <span class="icon">
+                                            <svg width="6" height="6" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.25532 1.06327L2.28133 4.06011L0.922349 2.68918C0.761504 2.52692 0.502182 2.52692 0.341337 2.68918C0.180492 2.85144 0.180492 3.11304 0.341337 3.2753L1.98918 4.93763C2.06796 5.01711 2.173 5.06016 2.27804 5.06016C2.38309 5.06016 2.48813 5.02042 2.56691 4.93763L5.83633 1.64608C5.99718 1.48382 5.99718 1.22222 5.83633 1.05996C5.67549 0.901014 5.41617 0.901014 5.25532 1.06327Z" fill="white"/></svg>
+                                        </span>
+                                        <span class="text">Gratis migrering</span>
+                                    </span>
+                                </span>
+                            </span>
+                        </label>
+                        <!-- price plan END -->
+                        <!-- price plan START -->
+                        <label class="card-check">
+                            <input type="radio" name="select-price">
+
+                            <span class="card">
+                                <span class="plan-header">
+                                    <span class="plan-title">Pro</span>
+                                    <span class="plan-price">
+                                        <span class="num">990 kr</span>
+                                        <span class="time">/ månad</span>
+                                    </span>
+                                </span>
+
+                                <span class="plan-details">
+                                    <span class="plan-details-line">
+                                        <span class="left">Webhotell</span>
+                                        <span class="right">50GB + Mailboks</span>
+                                    </span>
+
+                                    <span class="plan-details-line">
+                                        <span class="left">Support</span>
+                                        <span class="right">3 time/mnd</span>
+                                    </span>
+
+                                    <span class="plan-details-line">
+                                        <span class="left">Support respons</span>
+                                        <span class="right">Innen 4 timer</span>
+                                    </span>
+
+                                    <span class="plan-selected">
+                                        <span class="icon">
+                                            <svg width="6" height="6" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.25532 1.06327L2.28133 4.06011L0.922349 2.68918C0.761504 2.52692 0.502182 2.52692 0.341337 2.68918C0.180492 2.85144 0.180492 3.11304 0.341337 3.2753L1.98918 4.93763C2.06796 5.01711 2.173 5.06016 2.27804 5.06016C2.38309 5.06016 2.48813 5.02042 2.56691 4.93763L5.83633 1.64608C5.99718 1.48382 5.99718 1.22222 5.83633 1.05996C5.67549 0.901014 5.41617 0.901014 5.25532 1.06327Z" fill="white"/></svg>
+                                        </span>
+                                        <span class="text">Gratis migrering</span>
+                                    </span>
+                                </span>
+                            </span>
+                        </label>
+                        <!-- price plan END -->
+                        <!-- price plan START -->
+                        <label class="card-check">
+                            <input type="radio" name="select-price">
+
+                            <span class="card">
+                                <span class="plan-header">
+                                    <span class="plan-title">Custom</span>
+                                    <span class="plan-price">
+                                        <span class="num">1990 kr</span>
+                                        <span class="time">/ månad</span>
+                                    </span>
+                                </span>
+
+                                <span class="plan-details">
+                                    <span class="plan-details-line">
+                                        <span class="left">Webhotell</span>
+                                        <span class="right">100GB + Mailboks</span>
+                                    </span>
+
+                                    <span class="plan-details-line">
+                                        <span class="left">Support</span>
+                                        <span class="right">10 time/mnd</span>
+                                    </span>
+
+                                    <span class="plan-details-line">
+                                        <span class="left">Support respons</span>
+                                        <span class="right">Innen 4 timer</span>
+                                    </span>
+
+                                    <span class="plan-selected">
+                                        <span class="icon">
+                                            <svg width="6" height="6" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.25532 1.06327L2.28133 4.06011L0.922349 2.68918C0.761504 2.52692 0.502182 2.52692 0.341337 2.68918C0.180492 2.85144 0.180492 3.11304 0.341337 3.2753L1.98918 4.93763C2.06796 5.01711 2.173 5.06016 2.27804 5.06016C2.38309 5.06016 2.48813 5.02042 2.56691 4.93763L5.83633 1.64608C5.99718 1.48382 5.99718 1.22222 5.83633 1.05996C5.67549 0.901014 5.41617 0.901014 5.25532 1.06327Z" fill="white"/></svg>
+                                        </span>
+                                        <span class="text">Gratis migrering</span>
+                                    </span>
+                                </span>
+                            </span>
+                        </label>
+                        <!-- price plan END -->
+                    </div>
+
+                    <div class="cta">
+                        <button id="show-price-btn" class="option-button option-button--small" data-target-page="10">
+                            <span class="text">Nästa</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- === END page 9 === -->
+
+                <!-- === START page 8 === -->
+                <div id="page-10" class="form-page show">
+                    <div class="icon">
+                        <!-- <img src="img/page-7-icon.png" alt="browsers"> -->
+                    </div>
+
+                    <div class="section-text">
+                        <h2 class="section-title">Ditt resultat</h2>
+
+                        <div id="total-price">
+                            <div class="text">Hemsida från:</div>
+                            <div class="num" id="display-project-total">19 995 kr</div>
+                        </div>
+
+                        <p class="para">
+                            Baserat på de kriterier du har fyllt i, har vi svårt att ge dig ett exakt pris online. För att kunna ge dig ett exakt pris erbjuder vi dig en <b>kostandsfri</b> konsultation och offert.
+                            <br>
+                            <br>
+                            Fyll i formuläret här under så kontakta vi dig och har ett <b>förutsättningslöst</b> samtal!
+                        </p>
+                    </div>
+
+                    <div class="section-options" id="options-10">
+                        <form class="options-form-wrap" id="main-form">
+                            <div id="price-badge">
+                                <div class="text">JUST NU</div>
+                                <div class="num">2995:-</div>
+                                <div class="text">RABATT</div>
+                            </div>
+
+                            <div class="field">
+                                <input type="text" placeholder="Namn" required>
+                            </div>
+
+                            <div class="field">
+                                <input type="tel" placeholder="Telefon" required>
+                            </div>
+
+                            <div class="field">
+                                <input type="email" placeholder="E-post" required>
+                            </div>
+
+                            <button class="form_submit_btn" type="submit">
+                                <span class="text">Skicka</span>
+                            </button>
+
+                            <div class="para">
+                                Du förbinder dig inte till något när du fyller i formuläret. Genom att klicka på knappen accepterar du vår
+                                <a href="#">integritetspolicy</a>. För att kunna ge en offert med exakt pris behöver vi kunna kontakta dig.
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- === END page 8 === -->
+
+                <!-- === START page 7 === -->
+                <div id="page-11" class="form-page">
+                    <div class="icon">
+                        <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M0 50C0 22.4288 22.4308 0 50 0C77.5692 0 100 22.4288 100 50C100 77.5712 77.5692 100 50 100C22.4308 100 0 77.5712 0 50ZM3.84615 50C3.84615 75.4481 24.5519 96.1538 50 96.1538C75.4481 96.1538 96.1538 75.4481 96.1538 50C96.1538 24.5519 75.4481 3.84615 50 3.84615C24.5519 3.84615 3.84615 24.5519 3.84615 50Z" fill="white"/>
                         <path d="M73.5611 29.4923L44.0053 62.7423L26.1995 48.4981C25.3726 47.8346 24.1592 47.9711 23.4976 48.7981C22.8342 49.6288 22.9688 50.8384 23.7976 51.5019L43.0284 66.8865C43.3822 67.1692 43.8072 67.3077 44.2303 67.3077C44.7611 67.3077 45.2899 67.0884 45.6688 66.6615L76.438 32.0461C77.1438 31.2538 77.0726 30.0365 76.2784 29.3327C75.4822 28.625 74.2688 28.6961 73.5611 29.4923Z" fill="white"/>
                     </svg>
-                </div>
+                    </div>
 
-                <div class="section-text">
-                    <h2 class="section-title">
-                        <b>Allt klart!</b>
-                        <br>
-                        Din förfrågan är mottagen.
-                    </h2>
-                    <p class="para">
-                        Vi kommer återkomma till dig så fort som möjligt så vi kan ge dig en slutgiltig offert.
-                    </p>
-                </div>
+                    <div class="section-text">
+                        <h2 class="section-title">
+                            <b>Allt klart!</b>
+                            <br>
+                            Din förfrågan är mottagen.
+                        </h2>
+                        <p class="para">
+                            Vi kommer återkomma till dig så fort som möjligt så vi kan ge dig en slutgiltig offert.
+                        </p>
+                    </div>
 
-                <div class="section-options" id="options-11">
+                    <div class="section-options" id="options-11">
 
+                    </div>
                 </div>
+                <!-- === END page 7 === -->
+
+                <!-- ============================= form 1 END ==================== -->
+
+                <!-- ============================= form 2 START ====================== -->
+
+                <!-- === START page 7 === -->
+                <div id="page-12" class="form-page">
+                    <div class="icon">
+                        <!--                    <img src="img/page-7-icon.png" alt="">-->
+                    </div>
+
+                    <div class="section-text">
+                        <h2 class="section-title">
+                            Coming Soon
+                        </h2>
+                        <!--                    <p class="para">-->
+                        <!--                        Vi kommer återkomma till dig så fort som möjligt så vi kan ge dig en slutgiltig offert.-->
+                        <!--                    </p>-->
+                    </div>
+
+                    <div class="section-options" id="options-12">
+
+                    </div>
+                </div>
+                <!-- === END page 7 === -->
+
             </div>
-            <!-- === END page 7 === -->
+            <!-- END Body -->
 
-            <!-- ============================= form 1 END ==================== -->
-
-            <!-- ============================= form 2 START ====================== -->
-
-            <!-- === START page 7 === -->
-            <div id="page-12" class="form-page">
-                <div class="icon">
-<!--                    <img src="img/page-7-icon.png" alt="">-->
-                </div>
-
-                <div class="section-text">
-                    <h2 class="section-title">
-                        Coming Soon
-                    </h2>
-<!--                    <p class="para">-->
-<!--                        Vi kommer återkomma till dig så fort som möjligt så vi kan ge dig en slutgiltig offert.-->
-<!--                    </p>-->
-                </div>
-
-                <div class="section-options" id="options-12">
-
-                </div>
-            </div>
-            <!-- === END page 7 === -->
-
-        </div>
-        <!-- END Body -->
-
-        <!-- START footer -->
-        <div class="footer">
-            <div class="footer__brand">
-                <svg width="194" height="17" viewBox="0 0 194 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- START footer -->
+            <div class="footer">
+                <div class="footer__brand">
+                    <svg width="194" height="17" viewBox="0 0 194 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M39.2948 16.6241H27.1525V0.375977H39.2486V3.36008H30.3904V7.0256H37.3405V9.96271H30.3904V13.6517H39.2948V16.6241Z" fill="white"/>
                     <path d="M168.732 16.6241H156.59V0.375977H168.686V3.36008H159.828V7.0256H166.778V9.96271H159.828V13.6517H168.732V16.6241Z" fill="white"/>
                     <path d="M59.2431 3.36008V16.6241H55.9936V3.36008H50.6741V0.375977H64.5626V3.36008H59.2431Z" fill="white"/>
@@ -625,14 +629,15 @@
                     <path d="M188.681 3.36008V16.6241H185.431V3.36008H180.112V0.375977H194V3.36008H188.681Z" fill="white"/>
                     <path d="M8.43026 17C3.81617 17 0 13.5225 0 8.49413C0 3.46579 3.90868 0 8.43026 0C10.5928 0 12.5008 0.704907 13.8885 1.96199L11.8417 4.29993C10.9859 3.68901 9.81795 3.24257 8.63841 3.24257C5.68956 3.24257 3.52706 5.43953 3.52706 8.50587C3.52706 11.5722 5.62017 13.7692 8.43026 13.7692C10.5696 13.7692 12.0498 12.9938 12.524 10.9143H8.69623V7.97719H15.6694C16.3864 13.5225 12.8246 17 8.43026 17Z" fill="white"/>
                 </svg>
+                </div>
             </div>
-        </div>
-        <!-- END footer -->
+            <!-- END footer -->
 
-    </div>
-</section>
-<!-- END price form -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="js/app.js"></script>
+        </div>
+    </section>
+    <!-- END price form -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/app.js"></script>
 </body>
+
 </html>

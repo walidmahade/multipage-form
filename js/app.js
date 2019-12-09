@@ -12,6 +12,8 @@
     // END height adjustment
 
     let $priceForm = $("#price-form");
+    // save user movement from page to page for going back
+    let moveMentArr = [1]; // 1 is the homepage
     let projectTotal = {
         "page1": 0,
         "page2": 0,
@@ -47,15 +49,27 @@
         newPageActivate(pageNo);
     }
 
+    // manage new active page
+    function newPageActivate(id) {
+        $priceForm.attr('data-active-page', id);
+        $(".form-page").removeClass("show");
+        $("#page-" + id + ".form-page").addClass("show");
+    }
+
     // go forward a page
     $(".option-button").click(function (e) {
         e.preventDefault();
         let pageNo = parseInt($(this).attr('data-target-page'));
+
+        // keep page no track
+        moveMentArr.push(pageNo);
+        console.log("page serial: " + moveMentArr);
+
         // calculate total
         let getPrice = $(this).attr('data-price') ? $(this).attr('data-price') : 0;
         let getPricePageName = $(this).attr('data-price-name') ? $(this).attr('data-price-name') : 0;
         projectTotal[getPricePageName] = parseInt(getPrice);
-        console.log(projectTotal.total());
+        console.log("Current price: " + projectTotal.total());
         // go next
         formGoTo(pageNo);
     });
@@ -63,25 +77,33 @@
     // go back a page
     $("#go-back-btn").click(function (e) {
         e.preventDefault();
-        formPagePrev();
+        // let currentActivePage = parseInt($priceForm.attr('data-active-page'));
+        // if (currentActivePage === 12) {
+        //     formGoTo(1);
+        // } else {
+        //     formPagePrev();
+        // }
+        moveMentArr.splice(-1, 1);
+        let lastActivePage = moveMentArr[moveMentArr.length - 1];
+        formGoTo(lastActivePage);
+        console.log(moveMentArr);
     });
-
-    // manage new active page
-    function newPageActivate(id) {
-        $priceForm.attr('data-active-page', id);
-        $(".form-page").removeClass("show");
-        $("#page-"+ id +".form-page").addClass("show");
-    }
 
     // form submission
     $(".form_submit_btn").click(function (e) {
-        e.preventDefault();
+        // e.preventDefault();
+        // check if form fields are empty
+
         // handle form submission here, then go to next page
+        // formPageNext();
+    });
+    $("#main-form").submit(function (e) {
+        e.preventDefault();
         formPageNext();
     });
 
     // ========================= page 3 script
-    $(".option-button-3").hover( function () {
+    $(".option-button-3").hover(function () {
         $(this).find(".tooltip").addClass("show");
     }, function () {
         $(this).find(".tooltip").removeClass("show");
@@ -106,7 +128,7 @@
 
     $("#options-6 input:checkbox").change(function () {
         let total = 0;
-        $('input:checkbox:checked').each(function(){ // iterate through each checked element.
+        $('input:checkbox:checked').each(function () { // iterate through each checked element.
             total += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
         });
 
