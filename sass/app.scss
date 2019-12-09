@@ -501,8 +501,11 @@ Form Styles
         }
 
         input[type="radio"]:checked ~ .tooltip {
-            opacity: 1;
-            visibility: visible;
+            @media screen and (max-width: 767px) {
+                opacity: 1;
+                visibility: visible;
+            }
+            
             @include md {
                 bottom: 44px;
             }

@@ -84,19 +84,23 @@
                     </div>
 
                     <div class="section-options" id="options-2">
-                        <button class="option-button" data-target-page="3" data-price="7000" data-price-name="page2">
+                        <button class="option-button" data-target-page="3" data-price="7000"
+                                data-price-name="page2" data-formval="1-3" data-formkey="4">
                             <span class="text">1-3</span>
                         </button>
 
-                        <button class="option-button" data-target-page="3" data-price="13000" data-price-name="page2">
+                        <button class="option-button" data-target-page="3" data-price="13000"
+                                data-price-name="page2" data-formval="3-5" data-formkey="4">
                             <span class="text">3-5</span>
                         </button>
 
-                        <button class="option-button" data-target-page="3" data-price="17000" data-price-name="page2">
+                        <button class="option-button" data-target-page="3" data-price="17000"
+                                data-price-name="page2" data-formval="5-10" data-formkey="4">
                             <span class="text">5-10</span>
                         </button>
 
-                        <button class="option-button" data-target-page="3" data-price="25000" data-price-name="page2">
+                        <button class="option-button" data-target-page="3" data-price="25000"
+                                data-price-name="page2" data-formval="10+" data-formkey="4">
                             <span class="text">10+</span>
                         </button>
                     </div>
@@ -118,7 +122,7 @@
 
                     <div class="section-options" id="options-3">
 
-                        <button class="option-button-3" data-price="3000">
+                        <button class="option-button-3" data-price="3000" data-formval="Enkelt">
                             <label>
                                 <input type="radio" name="kind-of-design" checked>
                                 <span class="text">Enkelt</span>
@@ -128,7 +132,7 @@
                             </label>
                         </button>
 
-                        <button class="option-button-3" data-price="5000">
+                        <button class="option-button-3" data-price="5000" data-formval="Delikat">
                             <label>
                                 <input type="radio" name="kind-of-design">
                                 <span class="text">Delikat</span>
@@ -138,7 +142,7 @@
                             </label>
                         </button>
 
-                        <button class="option-button-3" data-price="10000">
+                        <button class="option-button-3" data-price="10000" data-formval="Modern">
                             <label>
                                 <input type="radio" name="kind-of-design">
                                 <span class="text">Modern</span>
@@ -148,7 +152,7 @@
                             </label>
                         </button>
 
-                        <button class="option-button-3" data-price="20000">
+                        <button class="option-button-3" data-price="20000" data-formval="Hög kvalité">
                             <label>
                                 <input type="radio" name="kind-of-design">
                                 <span class="text">Hög kvalité</span>
@@ -158,7 +162,7 @@
                             </label>
                         </button>
 
-                        <button class="option-button-3" data-price="100000">
+                        <button class="option-button-3" data-price="100000" data-formval="Världsklass">
                             <label>
                                 <input type="radio" name="kind-of-design">
                                 <span class="text">Världsklass</span>
@@ -170,9 +174,10 @@
                     </div>
 
                     <div class="cta">
+                        <!-- default price and design quality -->
                         <button class="option-button"
-                                data-target-page="4" data-price="0"
-                                data-price-name="page3">
+                                data-target-page="4" data-price="3000"
+                                data-price-name="page3" data-formval="Enkelt" data-formkey="5">
                             Nästa
                         </button>
                     </div>
@@ -193,11 +198,13 @@
                     </div>
 
                     <div class="section-options" id="options-4">
-                        <button class="option-button" data-target-page="5" data-price="20000" data-price-name="page4">
+                        <button class="option-button" data-target-page="5" data-price="20000"
+                                data-price-name="page4" data-formval="Ja" data-formkey="6">
                             <span class="text">Ja</span>
                         </button>
 
-                        <button class="option-button" data-target-page="5" data-price="0" data-price-name="page4">
+                        <button class="option-button" data-target-page="5" data-price="0"
+                                data-price-name="page4" data-formval="Nej" data-formkey="6">
                             <span class="text">Nej</span>
                         </button>
                     </div>
@@ -218,11 +225,13 @@
                     </div>
 
                     <div class="section-options" id="options-5">
-                        <button class="option-button" data-target-page="7" data-price="0" data-price-name="page5">
+                        <button class="option-button" data-target-page="7" data-price="0"
+                                data-price-name="page5" data-formval="Gör själv" data-formkey="7">
                             <span class="text">Gör själv</span>
                         </button>
 
-                        <button class="option-button" data-target-page="6" data-price="0" data-price-name="page5">
+                        <button class="option-button" data-target-page="6" data-price="0"
+                                data-price-name="page5" data-formval="Behöver hjälp" data-formkey="7">
                             <span class="text">Behöver hjälp</span>
                         </button>
                     </div>
@@ -232,7 +241,7 @@
                 <!-- === START page 6 === -->
                 <div id="page-6" class="form-page">
                     <div class="icon">
-                        <!--                    <img src="img/page-5-icon.png" alt="browsers">-->
+                        <!-- <img src="img/page-5-icon.png" alt="browsers"> -->
                     </div>
 
                     <div class="section-text">
@@ -244,23 +253,27 @@
 
                     <div class="section-options" id="options-6">
                         <div class="check-option">
-                            <input type="checkbox" name="extra-assets" id="asset-text" value="5000">
+                            <input type="checkbox" name="extra-assets" id="asset-text"
+                                   value="5000" data-formval="Text" data-formkey="8.1">
                             <label for="asset-text">Text</label>
                         </div>
 
                         <div class="check-option">
-                            <input type="checkbox" name="extra-assets" id="asset-blide-photo" value="3000">
+                            <input type="checkbox" name="extra-assets" id="asset-blide-photo"
+                                   value="3000" data-formval="Bilder/Foto" data-formkey="8.2">
                             <label for="asset-blide-photo">Bilder/Foto</label>
                         </div>
 
                         <div class="check-option">
-                            <input type="checkbox" name="extra-assets" id="asset-film-video" value="15000">
+                            <input type="checkbox" name="extra-assets" id="asset-film-video"
+                                   value="15000" data-formval="Film/Video" data-formkey="8.3">
                             <label for="asset-film-video">Film/Video</label>
                         </div>
                     </div>
 
                     <div class="cta">
-                        <button class="option-button" data-target-page="7" data-price="0" data-price-name="page6">
+                        <button class="option-button" data-target-page="7"
+                                data-price="0" data-price-name="page6" data-formval="[]">
                             <span class="text">Nästa</span>
                         </button>
                     </div>
@@ -282,15 +295,18 @@
                     </div>
 
                     <div class="section-options" id="options-7">
-                        <button class="option-button option-button--small" data-target-page="8" data-price="10000" data-price-name="page7">
+                        <button class="option-button option-button--small" data-target-page="8"
+                                data-price="10000" data-price-name="page7" data-formval="Js" data-formkey="9">
                             <span class="text">Ja</span>
                         </button>
 
-                        <button class="option-button option-button--small" data-target-page="8" data-price="0" data-price-name="page7">
+                        <button class="option-button option-button--small" data-target-page="8"
+                                data-price="0" data-price-name="page7" data-formval="Nej" data-formkey="9">
                             <span class="text">Nej</span>
                         </button>
 
-                        <button class="option-button option-button--small" data-target-page="8" data-price="0" data-price-name="page7">
+                        <button class="option-button option-button--small" data-target-page="8"
+                                data-price="0" data-price-name="page7" data-formval="Vet ej" data-formkey="9">
                             <span class="text">Vet ej</span>
                         </button>
                     </div>
@@ -312,15 +328,18 @@
                     </div>
 
                     <div class="section-options" id="options-8">
-                        <button class="option-button option-button--small" data-target-page="9">
+                        <button class="option-button option-button--small" data-target-page="9"
+                                data-formval="Js" data-formkey="10">
                             <span class="text">Ja</span>
                         </button>
 
-                        <button class="option-button option-button--small" data-target-page="10">
+                        <button class="option-button option-button--small" data-target-page="10"
+                                data-formval="Nej" data-formkey="10">
                             <span class="text">Nej</span>
                         </button>
 
-                        <button class="option-button option-button--small" data-target-page="10">
+                        <button class="option-button option-button--small" data-target-page="10"
+                                data-formval="Vet ej" data-formkey="10">
                             <span class="text">Vet ej</span>
                         </button>
                     </div>
@@ -342,7 +361,7 @@
 
                     <div class="section-options" id="options-9">
                         <!-- price plan START -->
-                        <label class="card-check">
+                        <label class="card-check" data-formval="Start">
                             <input type="radio" name="select-price">
 
                             <span class="card">
@@ -381,7 +400,7 @@
                         </label>
                         <!-- price plan END -->
                         <!-- price plan START -->
-                        <label class="card-check">
+                        <label class="card-check" data-formval="Business">
                             <input type="radio" name="select-price" checked>
 
                             <span class="card">
@@ -420,7 +439,7 @@
                         </label>
                         <!-- price plan END -->
                         <!-- price plan START -->
-                        <label class="card-check">
+                        <label class="card-check" data-formval="Pro">
                             <input type="radio" name="select-price">
 
                             <span class="card">
@@ -459,7 +478,7 @@
                         </label>
                         <!-- price plan END -->
                         <!-- price plan START -->
-                        <label class="card-check">
+                        <label class="card-check" data-formval="Custom">
                             <input type="radio" name="select-price">
 
                             <span class="card">
@@ -500,7 +519,8 @@
                     </div>
 
                     <div class="cta">
-                        <button id="show-price-btn" class="option-button option-button--small" data-target-page="10">
+                        <button id="show-price-btn" class="option-button option-button--small"
+                                data-target-page="10" data-formval="Business" data-formkey="11">
                             <span class="text">Nästa</span>
                         </button>
                     </div>
@@ -538,15 +558,15 @@
                             </div>
 
                             <div class="field">
-                                <input type="text" placeholder="Namn" required>
+                                <input type="text" placeholder="Namn" id="name" data-formkey="16" required>
                             </div>
 
                             <div class="field">
-                                <input type="tel" placeholder="Telefon" required>
+                                <input type="tel" placeholder="Telefon" id="phone" data-formkey="14" required>
                             </div>
 
                             <div class="field">
-                                <input type="email" placeholder="E-post" required>
+                                <input type="email" placeholder="E-post" id="email" data-formkey="13" required>
                             </div>
 
                             <button class="form_submit_btn" type="submit">
