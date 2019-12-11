@@ -1,7 +1,6 @@
 /****************************************
      mixins
 *****************************************/
-
 $screen-sm-min: 576px; // mobiles
 $screen-md-min: 768px; // Small tablets (portrait view)
 $screen-lg-min: 992px; // Tablets and small desktops
@@ -57,7 +56,8 @@ body {
     box-sizing: border-box;
 }
 
-input, button {
+input,
+button {
     &:focus {
         outline: none;
     }
@@ -67,7 +67,8 @@ Form Styles
 ========================================*/
 #price-form {
     background-color: #000;
-    background-image: url("../img/main-bg.jpg");
+    // background-image: url("../img/main-bg.jpg");
+    background-image: url("../img/getonnet-bg-005.svg");
     background-repeat: no-repeat;
     background-size: cover;
     height: auto;
@@ -180,15 +181,42 @@ Form Styles
             width: 100%;
 
             img, svg {
-                margin-bottom: 35px;
+                margin-bottom: 20px;
                 display: inline-block;
                 max-width: 100%;
             }
         }
+
+        & > .icon {
+            img {
+                max-width: 180px;
+                width: auto;
+                margin: 0 auto;
+                margin-bottom: 20px;
+                
+                @include md {
+                    max-width: 350px;
+                    width: auto;
+                }
+            }
+            
+            &.small-mobile {
+                img, svg {
+                    max-width: 70px;
+                    height: auto;
+
+                    @include md {
+                        max-width: 160px;
+                        width: auto;
+                    }
+                }
+            }
+        }
+
     }
 
     .section-text {
-        margin-bottom: 60px;
+        margin-bottom: 30px;
         width: 100%;
     }
 
@@ -198,7 +226,8 @@ Form Styles
         font-size: 24px;
         line-height: 29px;
         margin-top: 0;
-        margin-bottom: 35px;
+        margin-bottom: 15px;
+
         @include md {
             font-size: 46px;
             line-height: 56px;
@@ -222,7 +251,6 @@ Form Styles
         font-family: inherit;
         text-align: left;
         border: 0;
-        min-width: 330px;
         display: inline-flex;
         justify-content: space-between;
         align-items: center;
@@ -232,6 +260,7 @@ Form Styles
 
         @include md {
             padding: 28px 23px 32px 23px;
+            min-width: 330px;
         }
 
         &:hover {
@@ -444,15 +473,15 @@ Form Styles
         }
 
         .tooltip {
-            width: 210px;
+            width: 180px;
             color: #fff;
             border-radius: 5px;
             position: absolute;
             //top: -50%;
-            left: 60px;
+            left: 40px;
             background: linear-gradient(209.83deg, #FA2B56 0%, #F91C3D 100%);
             box-shadow: 20px 20px 40px rgba(2, 8, 22, 0.5);
-            padding: 24px 20px 20px 20px;
+            padding: 10px 14px;
             font-style: normal;
             font-weight: normal;
             font-size: 14px;
@@ -462,6 +491,8 @@ Form Styles
             transition: all .3s ease-in-out;
 
             @include md {
+                width: 210px;
+                padding: 24px 20px 20px 20px;
                 bottom: 120px;
                 left: 50%;
                 transform: translateX(-110px);
@@ -519,9 +550,14 @@ Form Styles
             max-width: 100%;
         }
     }
+
+    .section-options {
+        margin-top: 35px;
+    }
+
     .cta {
         width: 100%;
-        padding-top: 120px;
+        padding-top: 60px;
 
         .option-button {
             font-weight: bold;
@@ -908,9 +944,13 @@ Form Styles
         .num {
             font-style: normal;
             font-weight: bold;
-            font-size: 58px;
+            font-size: 30px;
             line-height: 70px;
             text-align: center;
+
+            @include md {
+                font-size: 58px;
+            }
         }
     }
     .section-text {
@@ -933,13 +973,18 @@ Form Styles
     }
 
     .options-form-wrap {
-        width: 335px;
+        max-width: 335px;
+        width: 100%;
         margin: 0 auto;
         background: #FFFFFF;
         box-shadow: 40px 40px 80px rgba(2, 8, 22, 0.3);
         border-radius: 5px;
-        padding: 37px 33px;
+        padding: 20px 20px;
         position: relative;
+
+        @include md {
+            padding: 37px 33px;
+        }
 
         .field {
             margin-bottom: 18px;
@@ -1026,6 +1071,7 @@ Form Styles
   width: 18px;
   height: 18px;
 }
+
 #loader {
   //margin: 60px auto;
   font-size: 4px;
@@ -1039,6 +1085,7 @@ Form Styles
   animation: load8 .4s infinite linear;
   margin-left: 12px;
 }
+
 @-webkit-keyframes load8 {
   0% {
     -webkit-transform: rotate(0deg);
@@ -1049,6 +1096,7 @@ Form Styles
     transform: rotate(360deg);
   }
 }
+
 @keyframes load8 {
   0% {
     -webkit-transform: rotate(0deg);
@@ -1078,6 +1126,7 @@ Form Styles
   -ms-animation: draw-around 1s infinite;
   animation: draw-around 1s;
 }
+
 @-ms-keyframes draw-around {
   0% {
     stroke-dashoffset: 640;
@@ -1089,6 +1138,7 @@ Form Styles
     stroke-dashoffset: 0;
   }
 }
+
 @-webkit-keyframes draw-around {
   0% {
     stroke-dashoffset: 640;
@@ -1100,6 +1150,7 @@ Form Styles
     stroke-dashoffset: 0;
   }
 }
+
 @keyframes draw-around {
   0% {
     stroke-dashoffset: 640;
