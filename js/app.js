@@ -2,6 +2,9 @@
     let $priceForm = $("#price-form");
     // save user movement from page to page for going back
     let moveMentArr = [1]; // 1 is the homepage
+
+    let activeForm = ""; // change on "has-budget/ no-budget"
+
     let setFormData = {
         "form_id": "2", // add this entry to which form
         "status": "active", // entry status
@@ -19,7 +22,25 @@
         "14": "", // userphone
         "13": "", // user email
         "18": 0, // budget
-    }
+    };
+
+    let setFormData2 = {
+        "form_id": "3", // add this entry to which form
+        "status": "active", // entry status
+        "1": "", // when do you want to start
+        "2": "", // your budget
+        "3": "", // project description
+        "4": "", // name
+        "5": "", // phone
+        "6": "", // email
+        "7": "", // website
+    };
+
+    // set active form (choose from 2 forms)
+    $("#options-1").on('click', '.option-button', function () {
+        activeForm = $(this).attr("data-form-target");
+        console.log("active form: " + activeForm);
+    });
 
     // save price for each page, 
     // to ebable going back and recalculating values
@@ -85,9 +106,16 @@
         // collect form data
         let formVal = $(this).data('formval');
         let formKey = $(this).data('formkey');
-        setFormData[formKey] = formVal;
-        console.log(setFormData);
-        console.log("---------------------------");
+
+        if (activeForm === "has-budget") {
+            setFormData2[formKey] = formVal;
+            console.log(setFormData2);
+            console.log("---------------------------");
+        } else if (activeForm === "no-budget") {
+            setFormData[formKey] = formVal;
+            console.log(setFormData);
+            console.log("---------------------------");
+        }
     });
 
     // go back a page
@@ -160,7 +188,7 @@
         setFormData["18"] = `${projectTotal.total()} kr`;
     });
 
-    // ============== form submission
+    // ============== form submission (no-budget)
     $("#main-form").submit(function (e) {
         e.preventDefault();
         // visual update
@@ -179,25 +207,56 @@
         });
     });
 
+    // ============== form submission (has-budget)
+    $("#main-form-2").submit(function (e) {
+        e.preventDefault();
+        // visual update
+        $("#main-form-2 button[type='submit']").html(`<div id="loader"></div>`);
+        // collect user,phone,mail
+        $.when(
+            $.each($("#main-form-2 input"), function (i, el) {
+                let formVal = $(el).val();
+                let formKey = $(el).data('formkey');
+                setFormData2[formKey] = formVal;
+            })
+        ).then(function () {
+            console.log(setFormData2);
+            // send req to save form
+            submitForm(setFormData2);
+        });
+    });
+    // ===============  form 2 scripts START
+    $("#about-project-form-2").change(function () {
+        let fieldValue = $(this).val();
+        let optionButton = $(this).parent()
+            .siblings(".cta")
+            .find(".option-button");
+        optionButton.data('formval', fieldValue);
+    });
+    // ===============  form 2 scripts END
+
     // ================= submit form to site
-    function submitForm(formdata) {
+    let username = 'ck_204b066e039ea6293ccfe43dac718f616927c814';
+    let password = 'cs_2052b760dec9479e201786167ed3c3a860ea53b5';
+
+    function submitForm(formData) {
         let settings = {
             "async": true,
             "crossDomain": true,
-            // "url": "https://wordpress-338259-1080455.cloudwaysapps.com/wp-json/gf/v2/entries/",
-            "url": window.location.origin + "/wp-json/gf/v2/entries/",
+            "url": "https://getonnet.se/wp-json/gf/v2/entries/",
+            // "url": window.location.origin + "/wp-json/gf/v2/entries/",
             "method": "POST",
             "headers": {
                 "Content-Type": "application/json",
-                "Authorization": "Basic Y2tfYzExYTIyMzViOGE3NTNhNzE2MTBhZmY4NTNmZTQ2ZWRlZDgwZWE0Yzpjc18wMDJlNTk2YzFmNzFhYWIwMzQzYzg2NzNkNjkwMTEwNzA4OGMxYWMz",
+                "Authorization": "Basic " + btoa(username + ":" + password),
             },
             "processData": false,
-            "data": JSON.stringify(formdata)
-        }
+            "data": JSON.stringify(formData)
+        };
 
         $.ajax(settings).done(function (response) {
             // console.log(response);
-            formPageNext();
+            formGoTo(11);
         });
     }
 
