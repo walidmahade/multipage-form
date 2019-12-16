@@ -184,7 +184,8 @@
         let settings = {
             "async": true,
             "crossDomain": true,
-            "url": "https://wordpress-338259-1080455.cloudwaysapps.com/wp-json/gf/v2/entries/",
+            // "url": "https://wordpress-338259-1080455.cloudwaysapps.com/wp-json/gf/v2/entries/",
+            "url": window.location.origin + "/wp-json/gf/v2/entries/",
             "method": "POST",
             "headers": {
                 "Content-Type": "application/json",
