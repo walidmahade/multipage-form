@@ -64,6 +64,40 @@ button {
         outline: none;
     }
 }
+
+.mpf-btn {
+    background: linear-gradient(196.72deg, #FA2B56 0%, #F91C3D 100%);
+    box-shadow: 15px 15px 50px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    font-family: inherit;
+    text-align: center;
+    text-decoration: none;
+    border: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 37px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    padding: 20px 23px;
+
+    @include md {
+        padding: 23px 35px;
+    }
+
+    &:hover {
+        background: linear-gradient(198.67deg, #FC3F6D 0%, #FC3259 100%);
+    }
+
+    .text {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 22px;
+        color: #fff;
+        text-align: left;
+    }
+}
 /*========================================
 Form Styles
 ========================================*/
@@ -75,14 +109,17 @@ Form Styles
     background-size: cover;
     height: auto;
     min-height: 100vh;
-    padding: 40px;
+    padding: 40px 20px;
 
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     align-content: center;
-
     overflow: hidden;
+
+    @include md {
+        padding: 40px;
+    }
 
     @include lg {
         height: auto;
@@ -91,7 +128,7 @@ Form Styles
 
     .container {
         width: 1600px;
-        max-width: 94%;
+        max-width: 100%;
         margin: 0 auto;
 
         display: flex;
@@ -256,9 +293,14 @@ Form Styles
         display: inline-flex;
         justify-content: space-between;
         align-items: center;
-        margin: 0 37px;
         cursor: pointer;
         transition: all .3s ease-in-out;
+        //width: 100%;
+
+        @include sm {
+            width: auto;
+            margin: 0 37px;
+        }
 
         @include md {
             padding: 28px 23px 32px 23px;
@@ -309,6 +351,11 @@ Form Styles
         margin-bottom: 35px;
         margin-left: 0;
         margin-right: 0;
+        width: 100%;
+
+        @include sm {
+            width: auto;
+        }
 
         @include rwd(850px) {
             margin-bottom: 0;
@@ -318,6 +365,10 @@ Form Styles
             &:first-child {
                 margin-right: 27.5px;
             }
+        }
+
+        .text {
+            margin-right: 15px;
         }
     }
 }
@@ -738,10 +789,16 @@ Form Styles
 
     .card-check {
         display: inline-block;
-        width: 241px;
-        margin: 20px;
+        width: 100%;
+        margin: 20px 0;
         color: #151C27;
-        max-width: 241px;
+        max-width: 100%;
+
+        @include sm {
+            max-width: 241px;
+            width: 241px;
+            margin: 20px;
+        }
 
         @include rwd(1280px) {
             margin: 0 20px;
@@ -981,14 +1038,18 @@ Form Styles
     }
 
     .options-form-wrap {
-        max-width: 335px;
         width: 100%;
+        max-width: 84%;
         margin: 0 auto;
         background: #FFFFFF;
         box-shadow: 40px 40px 80px rgba(2, 8, 22, 0.3);
         border-radius: 5px;
         padding: 20px 20px;
         position: relative;
+
+        @include sm {
+            max-width: 335px;
+        }
 
         @include md {
             padding: 37px 33px;
@@ -1098,11 +1159,16 @@ Form Styles
 
     .option-button {
         min-width: 10px;
-        width: 213px;
+        width: 100%;
         height: 137px;
         justify-content: center;
         flex-wrap: wrap;
-        margin: 15px;
+        margin: 15px 0;
+
+        @include sm {
+            width: 213px;
+            margin: 15px;
+        }
 
         .icon,
         .text {
@@ -1153,14 +1219,18 @@ Form Styles
 // --------------- page 15
 #page-15 {
     .options-form-wrap {
-        max-width: 335px;
         width: 100%;
+        max-width: 84%;
         margin: 0 auto;
         background: #FFFFFF;
         box-shadow: 40px 40px 80px rgba(2, 8, 22, 0.3);
         border-radius: 5px;
         padding: 20px 20px;
         position: relative;
+
+        @include sm {
+            max-width: 335px;
+        }
 
         @include md {
             padding: 37px 33px;
