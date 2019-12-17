@@ -61,6 +61,58 @@
         }
     };
 
+    function resetFormAndPriceData() {
+        projectTotal = {
+            "page1": 0,
+            "page2": 0,
+            "page3": 0,
+            "page4": 0,
+            "page5": 0,
+            "page6": 0,
+            "page7": 0,
+            "page8": 0,
+            "page9": 0,
+            total: function () {
+                return (this.page1 + this.page2 + this.page3
+                    + this.page4 + this.page5 + this.page6 + this.page7
+                    + this.page8 + this.page9)
+            }
+        };
+        setFormData = {
+            "form_id": "2", // add this entry to which form
+            "status": "active", // entry status
+            "4": "", // pages client needs
+            "5": "", // design quality
+            "6": "", // recive payments functions
+            "7": "", // need help with content?
+            "8.1": "", // selected content
+            "8.2": "", // selected content
+            "8.3": "", // selected content
+            "9": "", // third party integration?
+            "10": "", // do you need support and hosting?
+            "11": "", // support and hosting plan
+            "16": "", // username
+            "14": "", // userphone
+            "13": "", // user email
+            "18": 0, // budget
+        };
+    }
+
+    function resetSelectedValues() {
+        // page 3
+        $("#options-3 .option-button-3:first-child input[type='radio']").prop("checked", true);
+        $("#page-3 .cta .option-button").attr("data-price", 3000);
+
+        // page 6
+        $("#options-6 input:checkbox").prop("checked", false);
+        projectTotal["page6"] = 0; // set price to 0
+        $("#page-6").children(".cta").find(".option-button").first()
+            .attr('data-price', 0);
+
+        // page 9
+        $("#options-9 .card-check:nth-child(2) input[type='radio']").prop("checked", true);
+    }
+
     function formPageNext() {
         let currentActivePage = parseInt($priceForm.attr('data-active-page'));
         let nextPage = currentActivePage + 1;
@@ -126,6 +178,8 @@
         if (parseInt(activePage) === 10) {
             moveMentArr = [1];
             formGoTo(1);
+            resetSelectedValues(); // for no budget form
+            resetFormAndPriceData();
         } else {
             $(this).attr('disabled');
             if (moveMentArr.length > 1) {
@@ -195,6 +249,11 @@
 
         $("#page-6").children(".cta").find(".option-button").first()
             .attr('data-price', total);
+    });
+
+    // =================== page 9
+    $("#options-8 .option-button[data-target-page='10']").click(function () {
+        setFormData["11"] = ""; // set to empty choice if any, for hosting
     });
 
     // =================== page 9
