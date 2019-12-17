@@ -121,20 +121,23 @@
     // go back a page
     $("#go-back-btn").click(function (e) {
         e.preventDefault();
-        $(this).attr('disabled');
+        let activePage = $priceForm.attr('data-active-page');
 
-        if (moveMentArr.length > 1) {
-            moveMentArr.splice(-1, 1);
+        if (parseInt(activePage) === 10) {
+            moveMentArr = [1];
+            formGoTo(1);
+        } else {
+            $(this).attr('disabled');
+            if (moveMentArr.length > 1) {
+                moveMentArr.splice(-1, 1);
+            }
+            let lastActivePage = moveMentArr[moveMentArr.length - 1];
+            if (moveMentArr.length) {
+                formGoTo(lastActivePage);
+                $(this).removeAttr('disabled');
+            }
+            console.log(moveMentArr);
         }
-
-        let lastActivePage = moveMentArr[moveMentArr.length - 1];
-
-        if (moveMentArr.length) {
-            formGoTo(lastActivePage);
-            $(this).removeAttr('disabled');
-        }
-
-        console.log(moveMentArr);
     });
 
     // ========================= page 3 script
@@ -156,6 +159,25 @@
         optionButton.attr('data-price', price);
         optionButton.data('formval', formVal);
         optionButton.data('formkey', formKey);
+    });
+
+    // ====================== page 5 scripts
+    // this page has multiple choices, which can be ignored
+    // so if a user chooses from these options
+    // then decides to go back/ignore
+    // => remove checkbox item price, uncheck them,
+        // remove them from submission data object
+    $('.option-button[data-formval="Gör själv"]').click(function () {
+        // console.log("caution");
+        setFormData["8.1"] = ""; // choice 1
+        setFormData["8.2"] = ""; // choice 2
+        setFormData["8.3"] = ""; // choice 3
+        $("#options-6 input:checkbox").prop("checked", false);
+
+        projectTotal["page6"] = 0; // set price to 0
+
+        $("#page-6").children(".cta").find(".option-button").first()
+            .attr('data-price', 0);
     });
 
     // ====================== page 6 scripts

@@ -149,16 +149,21 @@ Form Styles
         color: #fff;
         font-family: inherit;
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
         align-content: center;
         line-height: 1;
         cursor: pointer;
+        padding-left: 0;
+        margin-left: -7px;
 
         .icon {
             margin-right: 10px;
-            margin-left: 10px;
             transition: margin .3s ease-in-out;
+
+            @include md {
+                margin-left: 10px;
+            }
         }
 
         .text {
@@ -1009,24 +1014,37 @@ Form Styles
         .num {
             font-style: normal;
             font-weight: bold;
-            font-size: 30px;
-            line-height: 70px;
+            font-size: 50px;
             text-align: center;
+            line-height: 1;
+            margin-bottom: 25px;
+            margin-top: 3px;
 
             @include md {
+                line-height: 70px;
                 font-size: 58px;
             }
         }
     }
     .section-text {
-        margin-bottom: 50px;
+        margin-bottom: 20px;
+
+        @include md {
+            margin-bottom: 50px;
+        }
 
         .section-title {
             font-style: normal;
             font-weight: normal;
-            font-size: 34px;
+            font-size: 24px;
             line-height: 41px;
             text-align: center;
+            margin-bottom: 10px;
+
+            @include md {
+                font-size: 34px;
+                margin-bottom: 15px;
+            }
         }
 
         .para {
