@@ -121,15 +121,19 @@
     // go back a page
     $("#go-back-btn").click(function (e) {
         e.preventDefault();
-        // let currentActivePage = parseInt($priceForm.attr('data-active-page'));
-        // if (currentActivePage === 12) {
-        //     formGoTo(1);
-        // } else {
-        //     formPagePrev();
-        // }
-        moveMentArr.splice(-1, 1);
+        $(this).attr('disabled');
+
+        if (moveMentArr.length > 1) {
+            moveMentArr.splice(-1, 1);
+        }
+
         let lastActivePage = moveMentArr[moveMentArr.length - 1];
-        formGoTo(lastActivePage);
+
+        if (moveMentArr.length) {
+            formGoTo(lastActivePage);
+            $(this).removeAttr('disabled');
+        }
+
         console.log(moveMentArr);
     });
 
