@@ -1121,9 +1121,16 @@ Form Styles
 
     .form_submit_btn {
         @extend .option-button, .option-button--small;
-        width: 100%;
+        width: 100% !important;
         margin: 0 !important;
         padding: 16px 20px;
+
+        @include sm {
+            width: 100%;
+        }
+        @include md {
+            width: 100%;
+        }
     }
 }
 
@@ -1303,9 +1310,16 @@ Form Styles
 
     .form_submit_btn {
         @extend .option-button, .option-button--small;
-        width: 100%;
+        width: 100% !important;
         margin: 0 !important;
         padding: 16px 20px;
+
+        @include sm {
+            width: 100%;
+        }
+        @include md {
+            width: 100%;
+        }
     }
 }
 // ======================  END page specific styles

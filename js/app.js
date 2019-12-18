@@ -32,7 +32,7 @@
         "3": "", // project description
         "4": "", // name
         "5": "", // phone
-        "6": "", // email
+        "8": "", // email
         "7": "", // website
     };
 
@@ -138,6 +138,14 @@
         $("#page-" + id + ".form-page").addClass("show");
     }
 
+    // update price display
+    function updatePriceDisplay() {
+        let price = projectTotal.total();
+        let formatterPrice = price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+        setFormData["18"] = `${formatterPrice} kr`;
+        $("#display-project-total").html(`${formatterPrice} kr`);
+    }
+
     // go forward a page
     $(".option-button").click(function (e) {
         e.preventDefault();
@@ -151,7 +159,7 @@
         let getPrice = $(this).attr('data-price') ? $(this).attr('data-price') : 0;
         let getPricePageName = $(this).attr('data-price-name') ? $(this).attr('data-price-name') : 0;
         projectTotal[getPricePageName] = parseInt(getPrice);
-        console.log("Current price: " + projectTotal.total());
+
         // go to next page
         formGoTo(pageNo);
 
@@ -165,6 +173,8 @@
             console.log("---------------------------");
         } else if (activeForm === "no-budget") {
             setFormData[formKey] = formVal;
+            updatePriceDisplay();
+            console.log("Current price: " + projectTotal.total());
             console.log(setFormData);
             console.log("---------------------------");
         }
@@ -268,10 +278,9 @@
         optionButton.data('formval', formVal);
     });
 
-    $("#show-price-btn").click(function () {
-        $("#display-project-total").html(`${projectTotal.total()} kr`);
-        setFormData["18"] = `${projectTotal.total()} kr`;
-    });
+    // $("#show-price-btn").click(function () {
+    //     updatePriceDisplay();
+    // });
 
     // ============== form submission (no-budget)
     $("#main-form").submit(function (e) {
@@ -310,6 +319,7 @@
             submitForm(setFormData2);
         });
     });
+
     // ===============  form 2 scripts START
     $("#about-project-form-2").change(function () {
         let fieldValue = $(this).val();
@@ -342,8 +352,30 @@
         $.ajax(settings).done(function (response) {
             // console.log(response);
             formGoTo(11);
+
+            sendNotification(response.id);
         });
     }
 
+    function sendNotification(id) {
+        let settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://getonnet.se/wp-json/gf/v2/entries/" + id +"/notifications",
+            // "url": window.location.origin + "/wp-json/gf/v2/entries/" + id +"/notifications",
+            "method": "POST",
+            "headers": {
+                "Content-Type": "application/json",
+                "Authorization": "Basic " + btoa(username + ":" + password),
+            },
+            "processData": false
+        };
 
+        $.ajax(settings).done(function (response) {
+            console.log("----------------");
+            console.log("Notification sent successfully");
+            console.log(response);
+            console.log("----------------");
+        });
+    }
 })(jQuery);
