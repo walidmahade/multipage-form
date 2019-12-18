@@ -129,6 +129,7 @@
 
     function formGoTo(pageNo) {
         newPageActivate(pageNo);
+        $("html, body").animate({ scrollTop: 0 }, "slow");
     }
 
     // manage new active page
