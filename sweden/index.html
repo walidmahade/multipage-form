@@ -15,7 +15,7 @@
 
 <body>
     <!-- START price form -->
-    <section id="price-form" data-active-page="1">
+    <section id="price-form" data-active-page="3">
         <div class="container">
 
             <!-- START Header -->
@@ -33,7 +33,7 @@
             <div class="body">
 
                 <!-- === START page 1 === -->
-                <div id="page-1" class="form-page show">
+                <div id="page-1" class="form-page">
                     <div class="icon">
                         <img src="img/page-1-top-icon.png" alt="page one top icon">
                     </div>
@@ -108,9 +108,20 @@
                 <!-- === END page 2 === -->
 
                 <!-- === START page 3 === -->
-                <div id="page-3" class="form-page">
-                    <div class="icon">
-                        <img src="img/page-3-image.png" alt="browsers">
+                <div id="page-3" class="form-page show">
+                    <div class="icon" id="pb3-slider">
+                        <!-- default image-->
+                        <div><img src="img/slider/page-3-image.png" alt="browsers"></div>
+                        <!-- option 1 image-->
+                        <div><img src="img/slider/1.png" alt="browsers"></div>
+                        <!-- option 2 image-->
+                        <div><img src="img/slider/2.png" alt="browsers"></div>
+                        <!-- option 3 image-->
+                        <div><img src="img/slider/3.png" alt="browsers"></div>
+                        <!-- option 4 image-->
+                        <div><img src="img/slider/4.png" alt="browsers"></div>
+                        <!-- option 5 image-->
+                        <div><img src="img/slider/5.png" alt="browsers"></div>
                     </div>
 
                     <div class="section-text">
@@ -122,9 +133,9 @@
 
                     <div class="section-options" id="options-3">
 
-                        <button class="option-button-3" data-price="3000" data-formval="Enkelt">
+                        <button class="option-button-3" data-price="3000" data-formval="Enkelt" data-slider="1">
                             <label>
-                                <input type="radio" name="kind-of-design" checked>
+                                <input type="radio" name="kind-of-design">
                                 <span class="text">Enkelt</span>
                                 <span class="tooltip">
                                     Med <b>hög kvalité</b> går vi genom er design i flera instanser, för att det ska bli exakt så ni tänkt er.
@@ -132,7 +143,7 @@
                             </label>
                         </button>
 
-                        <button class="option-button-3" data-price="5000" data-formval="Delikat">
+                        <button class="option-button-3" data-price="5000" data-formval="Delikat"  data-slider="2">
                             <label>
                                 <input type="radio" name="kind-of-design">
                                 <span class="text">Delikat</span>
@@ -142,7 +153,7 @@
                             </label>
                         </button>
 
-                        <button class="option-button-3" data-price="10000" data-formval="Modern">
+                        <button class="option-button-3" data-price="10000" data-formval="Modern"  data-slider="3">
                             <label>
                                 <input type="radio" name="kind-of-design">
                                 <span class="text">Modern</span>
@@ -152,7 +163,7 @@
                             </label>
                         </button>
 
-                        <button class="option-button-3" data-price="20000" data-formval="Hög kvalité">
+                        <button class="option-button-3" data-price="20000" data-formval="Hög kvalité"  data-slider="4">
                             <label>
                                 <input type="radio" name="kind-of-design">
                                 <span class="text">Hög kvalité</span>
@@ -162,7 +173,7 @@
                             </label>
                         </button>
 
-                        <button class="option-button-3" data-price="100000" data-formval="Världsklass">
+                        <button class="option-button-3" data-price="100000" data-formval="Världsklass"  data-slider="5">
                             <label>
                                 <input type="radio" name="kind-of-design">
                                 <span class="text">Världsklass</span>
@@ -175,7 +186,7 @@
 
                     <div class="cta">
                         <!-- default price and design quality -->
-                        <button class="option-button"
+                        <button class="option-button disabled-by-default" disabled
                                 data-target-page="4" data-price="3000"
                                 data-price-name="page3" data-formval="Enkelt" data-formkey="5">
                             Nästa
@@ -272,8 +283,9 @@
                     </div>
 
                     <div class="cta">
-                        <button class="option-button" data-target-page="7"
-                                data-price="0" data-price-name="page6" data-formval="[]">
+                        <button class="option-button disabled-by-default" disabled
+                                data-target-page="7" data-price="0"
+                                data-price-name="page6" data-formval="[]">
                             <span class="text">Nästa</span>
                         </button>
                     </div>
@@ -295,17 +307,17 @@
                     </div>
 
                     <div class="section-options" id="options-7">
-                        <button class="option-button option-button--small" data-target-page="8"
+                        <button class="option-button option-button--small" data-target-page="10"
                                 data-price="10000" data-price-name="page7" data-formval="Ja" data-formkey="9">
                             <span class="text">Ja</span>
                         </button>
 
-                        <button class="option-button option-button--small" data-target-page="8"
+                        <button class="option-button option-button--small" data-target-page="10"
                                 data-price="0" data-price-name="page7" data-formval="Nej" data-formkey="9">
                             <span class="text">Nej</span>
                         </button>
 
-                        <button class="option-button option-button--small" data-target-page="8"
+                        <button class="option-button option-button--small" data-target-page="10"
                                 data-price="0" data-price-name="page7" data-formval="Vet ej" data-formkey="9">
                             <span class="text">Vet ej</span>
                         </button>
@@ -689,7 +701,7 @@
                         <button class="option-button" data-target-page="14" data-price="0"
                                 data-price-name="page13" data-formval="100 000 kr +" data-formkey="2">
                             <span class="icon">
-                                <svg width="60" height="41" viewBox="0 0 60 41" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M59.125 19.685H37V16.6758H59.125C59.5 16.6758 59.75 16.5505 59.875 16.1743C60 15.9235 60 15.5474 59.875 15.2966L51.375 0.501529C51.25 0.125382 50.875 0 50.625 0H34.375H29.375C28.875 0 28.5 0.376147 28.5 0.877676C28.5 1.3792 28.875 1.75535 29.375 1.75535H33.5L35.125 15.6728V39.1193H24.875V16.6758H31.625C32.125 16.6758 32.5 16.2997 32.5 15.7982C32.5 15.2966 32.125 14.9205 31.625 14.9205H25L26.625 1.12844V1.00306V0.877676C26.625 0.877676 26.625 0.752294 26.5 0.752294C26.5 0.752294 26.5 0.626911 26.375 0.626911L26.25 0.501529L26.125 0.376147H26H25.875H9.625C9.125 0 8.75 0.125382 8.625 0.501529L0.125 15.2966C0 15.5474 0 15.9235 0.125 16.1743C0.25 16.4251 0.625 16.6758 0.875 16.6758H19C19.5 16.6758 19.875 16.2997 19.875 15.7982C19.875 15.2966 19.5 14.9205 19 14.9205H9.625C9.875 13.6667 9.75 12.2875 9.125 11.159C8.375 9.77982 7.25 9.02752 6 8.65138L7.125 6.64526C10.25 6.3945 13.75 4.38838 15.5 1.75535H24.75L23.125 15.6728V19.685H0.875C0.375 19.685 0 20.0612 0 20.5627C0 21.0642 0.375 21.4404 0.875 21.4404H23V24.4495H0.875C0.375 24.4495 0 24.8257 0 25.3272C0 25.8287 0.375 26.3303 0.875 26.3303H23V34.2294H0.875C0.375 34.2294 0 34.6055 0 35.107C0 35.6086 0.375 35.9847 0.875 35.9847H23V38.9939H13C12.5 38.9939 12.125 39.37 12.125 39.8716C12.125 40.3731 12.5 40.7492 13 40.7492H23.875H36C36.5 40.7492 36.875 40.3731 36.875 39.8716V35.8593H59C59.5 35.8593 59.875 35.4832 59.875 34.9817C59.875 34.4801 59.5 34.104 59 34.104H37V31.0948H59.125C59.625 31.0948 60 30.7187 60 30.2171C60 29.7156 59.625 29.3395 59.125 29.3395H37V26.3303H45C45.5 26.3303 45.875 25.9541 45.875 25.4526C45.875 24.9511 45.5 24.5749 45 24.5749H37V21.5658H59.125C59.625 21.5658 60 21.1896 60 20.6881C60 20.1865 59.625 19.685 59.125 19.685ZM7.5 11.9113C8 12.789 8.125 13.9174 7.75 14.7951H2.5L5 10.2813C6 10.4067 6.875 11.0336 7.5 11.9113ZM8.375 4.63914L10 1.88073H13.25C11.875 3.13456 10.125 4.13761 8.375 4.63914ZM57.5 14.7951H52.375C52 13.792 52 12.789 52.625 11.9113C53.125 11.0336 54 10.4067 55 10.2813L57.5 14.7951ZM50.125 1.88073L51.75 4.76453C49.875 4.38838 48.125 3.38532 46.75 1.88073H50.125ZM35.375 1.88073H44.625C46.5 4.76453 49.625 6.51988 53 6.77064L54.125 8.77676C52.875 9.15291 51.75 9.9052 51.125 11.159C50.5 12.4128 50.25 13.6667 50.625 14.9205H36.875L35.375 1.88073Z" fill="white"/></svg>
+                                <svg width="60" height="41" viewBox="0 0 60 41" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.875 31.2202H19C19.5 31.2202 19.875 30.844 19.875 30.3425C19.875 29.841 19.5 29.4648 19 29.4648H0.875C0.375 29.4648 0 29.841 0 30.3425C0 30.844 0.375 31.2202 0.875 31.2202Z" fill="white"/><path d="M8.25 39.1193H0.875C0.375 39.1193 0 39.4954 0 39.9969C0 40.4985 0.375 40.8746 0.875 40.8746H8.25C8.75 40.8746 9.125 40.4985 9.125 39.9969C9.125 39.4954 8.75 39.1193 8.25 39.1193Z" fill="white"/><path d="M59.125 24.5749H49.875C49.375 24.5749 49 24.9511 49 25.4526C49 25.9541 49.375 26.3303 49.875 26.3303H59.125C59.625 26.3303 60 25.9541 60 25.4526C60 24.9511 59.625 24.5749 59.125 24.5749Z" fill="white"/><path d="M59.125 39.1193H40.875C40.375 39.1193 40 39.4954 40 39.9969C40 40.4985 40.375 40.8746 40.875 40.8746H59C59.5 40.8746 59.875 40.4985 59.875 39.9969C60 39.4954 59.625 39.1193 59.125 39.1193Z" fill="white"/><path d="M59.125 19.685H37V16.6758H59.125C59.5 16.6758 59.75 16.5505 59.875 16.1743C60 15.9235 60 15.5474 59.875 15.2966L51.375 0.501529C51.25 0.125382 50.875 0 50.625 0H34.375H29.375C28.875 0 28.5 0.376147 28.5 0.877676C28.5 1.3792 28.875 1.75535 29.375 1.75535H33.5L35.125 15.6728V39.1193H24.875V16.6758H31.625C32.125 16.6758 32.5 16.2997 32.5 15.7982C32.5 15.2966 32.125 14.9205 31.625 14.9205H25L26.625 1.12844V1.00306V0.877676C26.625 0.877676 26.625 0.752294 26.5 0.752294C26.5 0.752294 26.5 0.626911 26.375 0.626911L26.25 0.501529L26.125 0.376147H26H25.875H9.625C9.125 0 8.75 0.125382 8.625 0.501529L0.125 15.2966C0 15.5474 0 15.9235 0.125 16.1743C0.25 16.4251 0.625 16.6758 0.875 16.6758H19C19.5 16.6758 19.875 16.2997 19.875 15.7982C19.875 15.2966 19.5 14.9205 19 14.9205H9.625C9.875 13.6667 9.75 12.2875 9.125 11.159C8.375 9.77982 7.25 9.02752 6 8.65138L7.125 6.64526C10.25 6.3945 13.75 4.38838 15.5 1.75535H24.75L23.125 15.6728V19.685H0.875C0.375 19.685 0 20.0612 0 20.5627C0 21.0642 0.375 21.4404 0.875 21.4404H23V24.4495H0.875C0.375 24.4495 0 24.8257 0 25.3272C0 25.8287 0.375 26.3303 0.875 26.3303H23V34.2294H0.875C0.375 34.2294 0 34.6055 0 35.107C0 35.6086 0.375 35.9847 0.875 35.9847H23V38.9939H13C12.5 38.9939 12.125 39.37 12.125 39.8716C12.125 40.3731 12.5 40.7492 13 40.7492H23.875H36C36.5 40.7492 36.875 40.3731 36.875 39.8716V35.8593H59C59.5 35.8593 59.875 35.4832 59.875 34.9817C59.875 34.4801 59.5 34.104 59 34.104H37V31.0948H59.125C59.625 31.0948 60 30.7187 60 30.2171C60 29.7156 59.625 29.3395 59.125 29.3395H37V26.3303H45C45.5 26.3303 45.875 25.9541 45.875 25.4526C45.875 24.9511 45.5 24.5749 45 24.5749H37V21.5658H59.125C59.625 21.5658 60 21.1896 60 20.6881C60 20.1865 59.625 19.685 59.125 19.685ZM7.5 11.9113C8 12.789 8.125 13.9174 7.75 14.7951H2.5L5 10.2813C6 10.4067 6.875 11.0336 7.5 11.9113ZM8.375 4.63914L10 1.88073H13.25C11.875 3.13456 10.125 4.13761 8.375 4.63914ZM57.5 14.7951H52.375C52 13.792 52 12.789 52.625 11.9113C53.125 11.0336 54 10.4067 55 10.2813L57.5 14.7951ZM50.125 1.88073L51.75 4.76453C49.875 4.38838 48.125 3.38532 46.75 1.88073H50.125ZM35.375 1.88073H44.625C46.5 4.76453 49.625 6.51988 53 6.77064L54.125 8.77676C52.875 9.15291 51.75 9.9052 51.125 11.159C50.5 12.4128 50.25 13.6667 50.625 14.9205H36.875L35.375 1.88073Z" fill="white"/><path d="M14 7.39755C13.5 7.39755 13.125 7.7737 13.125 8.27523C13.125 8.77676 13.5 9.1529 14 9.1529H19.125C19.625 9.27829 20 8.77676 20 8.27523C20 7.7737 19.625 7.39755 19.125 7.39755H14Z" fill="white"/><path d="M46 7.39755H40.875C40.375 7.39755 40 7.7737 40 8.27523C40 8.77676 40.375 9.1529 40.875 9.1529H46C46.5 9.1529 46.875 8.77676 46.875 8.27523C46.875 7.7737 46.625 7.39755 46 7.39755Z" fill="white"/></svg>
                             </span>
                             <span class="text">100 000 kr +</span>
                         </button>
@@ -797,6 +809,7 @@
     </section>
     <!-- END price form -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/slider.min.js"></script>
     <script src="js/app.js"></script>
 </body>
 

@@ -1,0 +1,34 @@
+------------------- getonnet.se -> sweden
+Form - calculator:
+    - hide last 2 pages before pricing page
+    - Update js url
+    - on form submit page -> go back button text : "Börja om"
+    - Api key
+    - image path -> src="/wp-content/themes/astra-child/img/
+
+
+
+
+
+
+------------------- getonnet.no -> norway
+Form - calculator:
+    - Update js url
+    - on form submit page -> go back button text : "begynne på nytt"
+        - Then on reset change text to noway verison of "go back"
+    - Api key
+    - image path
+
+
+============================================
+    Check lists / Tests
+============================================
+----------- BOTH sites
+    1. form submits
+    2. price on console == price on display
+
+----------- getonnet.se -> sweden
+    1. on calculator form submit page, go back text is "Börja om"
+
+----------- getonnet.no -> norway
+    1. on calculator form submit page, go back text is "begynne på nytt"

@@ -99,6 +99,10 @@
     }
 
     function resetSelectedValues() {
+        // reset back button text
+        $("#go-back-btn .text").html("Tidigare fråga");
+        // disable multiple choice buttons
+        $(".disabled-by-default").prop('disabled', true);
         // page 3
         $("#options-3 .option-button-3:first-child input[type='radio']").prop("checked", true);
         $("#page-3 .cta .option-button").attr("data-price", 3000);
@@ -108,6 +112,7 @@
         projectTotal["page6"] = 0; // set price to 0
         $("#page-6").children(".cta").find(".option-button").first()
             .attr('data-price', 0);
+
 
         // page 9
         $("#options-9 .card-check:nth-child(2) input[type='radio']").prop("checked", true);
@@ -137,6 +142,11 @@
         $priceForm.attr('data-active-page', id);
         $(".form-page").removeClass("show");
         $("#page-" + id + ".form-page").addClass("show");
+        // change text of calculator form to-> start over for submission page (begynne på nytt,Börja om)
+        let goBackBtnText = window.location.origin === "https://getonnet.se" ? "Börja om" : "Begynne på nytt";
+        if (id === 10) {
+            $("#go-back-btn .text").html(goBackBtnText);
+        }
     }
 
     // update price display
@@ -206,6 +216,15 @@
     });
 
     // ========================= page 3 script
+    // -------------- page 3 image slider
+    const mySiema = new Siema({
+        perPage: 1,
+        selector: "#pb3-slider",
+        draggable: false,
+        multipleDrag: false,
+        loop: false,
+    });
+
     $(".option-button-3").hover(function () {
         $(this).find(".tooltip").addClass("show");
     }, function () {
@@ -221,9 +240,15 @@
             .siblings(".cta")
             .find(".option-button");
 
+        optionButton.prop('disabled', false);
+
         optionButton.attr('data-price', price);
         optionButton.data('formval', formVal);
         optionButton.data('formkey', formKey);
+
+        // change image slider
+        let targetSlide = $(this).attr("data-slider");
+        mySiema.goTo(parseInt(targetSlide));
     });
 
     // ====================== page 5 scripts
@@ -248,8 +273,9 @@
     // ====================== page 6 scripts
     $("#options-6 input:checkbox").change(function () {
         let total = 0;
+        let checkedOptions = $('#options-6 input:checkbox:checked');
 
-        $('#options-6 input:checkbox:checked').each(function () { // iterate through each checked element.
+        checkedOptions.each(function () { // iterate through each checked element.
             // get total
             total += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
             // set form data
@@ -258,8 +284,14 @@
             setFormData[formKey] = formVal;
         });
 
-        $("#page-6").children(".cta").find(".option-button").first()
-            .attr('data-price', total);
+        let optionButton = $("#page-6").children(".cta").find(".option-button").first();
+
+        if (checkedOptions.length) {
+            optionButton.prop("disabled", false);
+        } else {
+            optionButton.prop("disabled", true);
+        }
+        optionButton.attr('data-price', total);
     });
 
     // =================== page 9
@@ -339,8 +371,8 @@
         let settings = {
             "async": true,
             "crossDomain": true,
-            "url": "https://getonnet.se/wp-json/gf/v2/entries/",
-            // "url": window.location.origin + "/wp-json/gf/v2/entries/",
+            // "url": "https://getonnet.se/wp-json/gf/v2/entries/",
+            "url": window.location.origin + "/wp-json/gf/v2/entries/",
             "method": "POST",
             "headers": {
                 "Content-Type": "application/json",
@@ -362,8 +394,8 @@
         let settings = {
             "async": true,
             "crossDomain": true,
-            "url": "https://getonnet.se/wp-json/gf/v2/entries/" + id +"/notifications",
-            // "url": window.location.origin + "/wp-json/gf/v2/entries/" + id +"/notifications",
+            // "url": "https://getonnet.se/wp-json/gf/v2/entries/" + id +"/notifications",
+            "url": window.location.origin + "/wp-json/gf/v2/entries/" + id +"/notifications",
             "method": "POST",
             "headers": {
                 "Content-Type": "application/json",
