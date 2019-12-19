@@ -1,5 +1,6 @@
 (function ($) {
     let $priceForm = $("#price-form");
+    let formCountry = "no";
     // save user movement from page to page for going back
     let moveMentArr = [1]; // 1 is the homepage
 
@@ -99,6 +100,12 @@
     }
 
     function resetSelectedValues() {
+        // reset back button text
+        let backBtnText = (formCountry === "se" ? "Tidigare fråga" : "Forrige spørsmål" );
+        $("#go-back-btn .text").html(backBtnText);
+
+        // disable multiple choice buttons
+        $(".disabled-by-default").prop('disabled', true);
         // page 3
         $("#options-3 .option-button-3:first-child input[type='radio']").prop("checked", true);
         $("#page-3 .cta .option-button").attr("data-price", 3000);
@@ -108,6 +115,7 @@
         projectTotal["page6"] = 0; // set price to 0
         $("#page-6").children(".cta").find(".option-button").first()
             .attr('data-price', 0);
+
 
         // page 9
         $("#options-9 .card-check:nth-child(2) input[type='radio']").prop("checked", true);
@@ -138,7 +146,7 @@
         $(".form-page").removeClass("show");
         $("#page-" + id + ".form-page").addClass("show");
         // change text of calculator form to-> start over for submission page (begynne på nytt,Börja om)
-        let goBackBtnText = window.location.origin === "https://getonnet.se" ? "Börja om" : "Begynne på nytt";
+        let goBackBtnText = (formCountry === "se" ? "Börja om" : "Begynne på nytt");
         if (id === 10) {
             $("#go-back-btn .text").html(goBackBtnText);
         }
@@ -211,6 +219,15 @@
     });
 
     // ========================= page 3 script
+    // -------------- page 3 image slider
+    const mySiema = new Siema({
+        perPage: 1,
+        selector: "#pb3-slider",
+        draggable: false,
+        multipleDrag: false,
+        loop: false,
+    });
+
     $(".option-button-3").hover(function () {
         $(this).find(".tooltip").addClass("show");
     }, function () {
@@ -226,9 +243,15 @@
             .siblings(".cta")
             .find(".option-button");
 
+        optionButton.prop('disabled', false);
+
         optionButton.attr('data-price', price);
         optionButton.data('formval', formVal);
         optionButton.data('formkey', formKey);
+
+        // change image slider
+        let targetSlide = $(this).attr("data-slider");
+        mySiema.goTo(parseInt(targetSlide));
     });
 
     // ====================== page 5 scripts
@@ -253,8 +276,9 @@
     // ====================== page 6 scripts
     $("#options-6 input:checkbox").change(function () {
         let total = 0;
+        let checkedOptions = $('#options-6 input:checkbox:checked');
 
-        $('#options-6 input:checkbox:checked').each(function () { // iterate through each checked element.
+        checkedOptions.each(function () { // iterate through each checked element.
             // get total
             total += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
             // set form data
@@ -263,8 +287,14 @@
             setFormData[formKey] = formVal;
         });
 
-        $("#page-6").children(".cta").find(".option-button").first()
-            .attr('data-price', total);
+        let optionButton = $("#page-6").children(".cta").find(".option-button").first();
+
+        if (checkedOptions.length) {
+            optionButton.prop("disabled", false);
+        } else {
+            optionButton.prop("disabled", true);
+        }
+        optionButton.attr('data-price', total);
     });
 
     // =================== page 9
@@ -337,8 +367,8 @@
     // ===============  form 2 scripts END
 
     // ================= submit form to site
-    let username = 'ck_dafca3a205b303e9d4ad56b7398f49911a0aa013';
-    let password = 'cs_c71e5ef2d39e4e478717c4d53e1e9f9777a4cf13';
+    let username = formCountry === "se" ? 'ck_204b066e039ea6293ccfe43dac718f616927c814' : 'ck_dafca3a205b303e9d4ad56b7398f49911a0aa013';
+    let password = formCountry === "se" ? 'cs_2052b760dec9479e201786167ed3c3a860ea53b5' : 'cs_c71e5ef2d39e4e478717c4d53e1e9f9777a4cf13';
 
     function submitForm(formData) {
         let settings = {

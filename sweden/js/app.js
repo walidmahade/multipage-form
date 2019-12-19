@@ -1,5 +1,6 @@
 (function ($) {
     let $priceForm = $("#price-form");
+    let formCountry = "se";
     // save user movement from page to page for going back
     let moveMentArr = [1]; // 1 is the homepage
 
@@ -100,7 +101,9 @@
 
     function resetSelectedValues() {
         // reset back button text
-        $("#go-back-btn .text").html("Tidigare fråga");
+        let backBtnText = (formCountry === "se" ? "Tidigare fråga" : "Forrige spørsmål" );
+        $("#go-back-btn .text").html(backBtnText);
+
         // disable multiple choice buttons
         $(".disabled-by-default").prop('disabled', true);
         // page 3
@@ -143,7 +146,7 @@
         $(".form-page").removeClass("show");
         $("#page-" + id + ".form-page").addClass("show");
         // change text of calculator form to-> start over for submission page (begynne på nytt,Börja om)
-        let goBackBtnText = window.location.origin === "https://getonnet.se" ? "Börja om" : "Begynne på nytt";
+        let goBackBtnText = (formCountry === "se" ? "Börja om" : "Begynne på nytt");
         if (id === 10) {
             $("#go-back-btn .text").html(goBackBtnText);
         }
@@ -364,8 +367,8 @@
     // ===============  form 2 scripts END
 
     // ================= submit form to site
-    let username = 'ck_204b066e039ea6293ccfe43dac718f616927c814';
-    let password = 'cs_2052b760dec9479e201786167ed3c3a860ea53b5';
+    let username = formCountry === "se" ? 'ck_204b066e039ea6293ccfe43dac718f616927c814' : 'ck_dafca3a205b303e9d4ad56b7398f49911a0aa013';
+    let password = formCountry === "se" ? 'cs_2052b760dec9479e201786167ed3c3a860ea53b5' : 'cs_c71e5ef2d39e4e478717c4d53e1e9f9777a4cf13';
 
     function submitForm(formData) {
         let settings = {

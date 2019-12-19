@@ -172,6 +172,9 @@ Form Styles
         min-height: 600px;
         margin: 45px 0; } }
   #price-form .form-page {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
     width: 100%;
     height: 100%;
     position: absolute;
@@ -239,7 +242,7 @@ Form Styles
     margin-bottom: 15px; }
     @media (min-width: 768px) {
       #price-form .section-title {
-        font-size: 46px;
+        font-size: 44px;
         line-height: 56px; } }
   #price-form .para {
     font-style: normal;
@@ -803,11 +806,38 @@ Form Styles
       min-width: 241px;
       width: 100%;
       overflow: hidden;
-      cursor: pointer; }
+      cursor: pointer;
+      position: relative; }
       #options-9 .card-check .card:hover {
         margin: 0; }
         #options-9 .card-check .card:hover .plan-header {
           padding: 39px 18px 32px 18px; }
+      #options-9 .card-check .card .plan-badge {
+        background-color: #FFF766;
+        color: #151C27 !important;
+        height: 20px;
+        font-weight: bold;
+        font-size: 10px;
+        text-align: center;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        position: absolute;
+        right: -40px;
+        top: 25px;
+        width: 150px;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+        -webkit-transform-origin: 50% 50%;
+        -ms-transform-origin: 50% 50%;
+        transform-origin: 50% 50%; }
     #options-9 .card-check .plan-header,
     #options-9 .card-check .plan-title,
     #options-9 .card-check .plan-price,
